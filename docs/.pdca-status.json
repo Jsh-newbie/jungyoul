@@ -1,9 +1,25 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-02-27T12:25:52.812Z",
-  "activeFeatures": [],
-  "primaryFeature": null,
-  "features": {},
+  "lastUpdated": "2026-02-28T18:39:31.363Z",
+  "activeFeatures": [
+    "landing"
+  ],
+  "primaryFeature": "landing",
+  "features": {
+    "landing": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-28T18:39:31.363Z",
+        "lastUpdated": "2026-02-28T18:39:31.363Z"
+      },
+      "lastFile": "/Users/sunghyunji/개발/landing/export-pdf.js"
+    }
+  },
   "pipeline": {
     "currentPhase": 1,
     "level": "Dynamic",
@@ -12,7 +28,14 @@
   "session": {
     "startedAt": "2026-02-27T12:25:52.812Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-02-27T12:25:52.812Z"
+    "lastActivity": "2026-02-28T18:39:31.363Z"
   },
-  "history": []
+  "history": [
+    {
+      "timestamp": "2026-02-28T18:39:31.363Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
 }

@@ -607,15 +607,18 @@
         .scroll-card::-webkit-scrollbar {
             width: 6px;
         }
+
         .scroll-card::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .scroll-card::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 3px;
         }
+
         .scroll-card::-webkit-scrollbar-thumb:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         /* ===== QUOTE BOX ===== */
@@ -1027,6 +1030,76 @@
         .slide.active .process-map,
         .slide.active .list-grid {
             animation: fadeInUp 0.5s 0.4s ease both;
+        }
+
+        /* ===== IMAGE MODAL ===== */
+        .img-thumb {
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .img-thumb:hover {
+            border-color: rgba(74, 144, 217, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(74, 144, 217, 0.15);
+        }
+
+        .img-caption {
+            font-size: 14px;
+            color: var(--gray);
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .img-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            backdrop-filter: blur(8px);
+        }
+
+        .img-modal-overlay.show {
+            display: flex;
+        }
+
+        .img-modal-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .img-modal-close {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            font-size: 32px;
+            color: var(--white);
+            cursor: pointer;
+            z-index: 10000;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .img-modal-close:hover {
+            opacity: 1;
         }
     </style>
 </head>
@@ -2305,11 +2378,14 @@
                 <strong style="color:var(--blue-light);">누군가는 이미 하고 있다</strong>
             </div>
             <div style="display:flex;gap:16px;flex:1;min-height:0;width:100%;max-width:860px;">
-                <div class="scroll-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+                <div class="scroll-card"
+                    style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
                     <img src="./student-chat-full.png" style="width:100%;display:block;border-radius:8px;">
                 </div>
-                <div class="scroll-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
-                    <img src="./KakaoTalk_Photo_2026-03-01-02-43-24.jpeg" style="width:100%;display:block;border-radius:8px;">
+                <div class="scroll-card"
+                    style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+                    <img src="./KakaoTalk_Photo_2026-03-01-02-43-24.jpeg"
+                        style="width:100%;display:block;border-radius:8px;">
                 </div>
             </div>
             <div style="color:var(--gray);font-size:11px;margin-top:8px;letter-spacing:0.5px;">스크롤하여 내용을 확인하세요 ↕</div>
@@ -2327,11 +2403,15 @@
                 <strong style="color:var(--blue-light);">누군가는 이미 하고 있다</strong>
             </div>
             <div style="display:flex;gap:16px;flex:1;min-height:0;width:100%;max-width:860px;">
-                <div class="scroll-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
-                    <img src="./KakaoTalk_Snapshot_20260301_024934.png" style="width:100%;display:block;border-radius:8px;">
+                <div class="scroll-card"
+                    style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+                    <img src="./KakaoTalk_Snapshot_20260301_024934.png"
+                        style="width:100%;display:block;border-radius:8px;">
                 </div>
-                <div class="scroll-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
-                    <img src="./KakaoTalk_Photo_2026-03-01-02-49-43.jpeg" style="width:100%;display:block;border-radius:8px;">
+                <div class="scroll-card"
+                    style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+                    <img src="./KakaoTalk_Photo_2026-03-01-02-49-43.jpeg"
+                        style="width:100%;display:block;border-radius:8px;">
                 </div>
             </div>
             <div style="color:var(--gray);font-size:11px;margin-top:8px;letter-spacing:0.5px;">스크롤하여 내용을 확인하세요 ↕</div>
@@ -2410,155 +2490,367 @@
         <!-- ============================================ -->
         <div class="slide part-divider" data-part="divider">
             <div class="part-number">PART 3</div>
-            <div class="part-title">1등급을 만드는<br>정율사관학원만의 '관리 시스템'</div>
+            <div class="part-title">1등급을 만드는<br>정율사관학원만의 '<span style="color:var(--blue-light);">관리 시스템</span>'</div>
             <div class="part-speaker">오동현 선생님</div>
-            <div class="part-duration">약 30분</div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 11: 변별력 (오동현) -->
+        <!-- SLIDE 11: 관리 시스템이 필요한 이유 (오동현) -->
         <!-- ============================================ -->
-        <div class="slide" data-part="3">
-            <div class="slide-label">변별력의 진실</div>
-            <div class="slide-title">
+        <div class="slide" data-part="3" style="padding:36px 48px;">
+            <div class="slide-label">관리 시스템이 필요한 이유</div>
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:8px;">
                 고1 과학, <span class="accent">변별력</span>은<br>어디서 나오는가?
             </div>
-            <div class="card-grid cols-2">
-                <div class="card">
-                    <div class="card-icon">⚠️</div>
-                    <div class="card-title">A등급 99%의 함정</div>
-                    <div class="card-desc">
-                        고교학점제 하에서<br>지필 A등급은 거의 모두가 받음<br><br>
-                        <strong>점수만으로는 변별력이 없다</strong>
+            <div class="slide-subtitle" style="margin-bottom:24px;font-size:15px;">
+                지필 평가(60~40%) + <strong>수행 평가(40~60%)</strong>
+            </div>
+            <div class="card-grid cols-2" style="max-width:860px;">
+                <div class="card" style="padding:32px 28px;">
+                    <div class="card-icon" style="font-size:36px;margin-bottom:16px;">⚠️</div>
+                    <div class="card-title" style="font-size:22px;margin-bottom:14px;">지필 A등급의 함정</div>
+                    <div class="card-desc" style="font-size:17px;line-height:1.8;">
+                        다들 높게 나오는 지필 평가 점수<br>
+                        <span style="color:var(--gray);">고교학점제 하에서 A등급은 거의 모두가 받음</span>
+                    </div>
+                    <div
+                        style="margin-top:20px;padding:14px 18px;background:rgba(255,107,107,0.08);border-radius:10px;">
+                        <strong style="font-size:18px;color:var(--danger);">점수만으로는 변별력이 없다</strong>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-title">진짜 1등급의 조건</div>
-                    <div class="card-desc">
-                        ▸ 수행평가 점수<br>
-                        ▸ 매일의 학습 루틴<br>
-                        ▸ 세특 기록의 질<br><br>
-                        <strong>이 세 가지가 1등급을 가른다</strong>
+                <div class="card" style="padding:32px 28px;border-color:rgba(74,144,217,0.3);">
+                    <div class="card-icon" style="font-size:36px;margin-bottom:16px;">🎯</div>
+                    <div class="card-title" style="font-size:22px;margin-bottom:14px;">수행평가 → 세특의 핵심 연결</div>
+                    <div class="card-desc" style="font-size:17px;line-height:1.8;">
+                        학교 선생님은<br><strong style="font-size:18px;">수업 태도 + 수행 평가</strong>를 보고 학생을 판단
+                    </div>
+                    <div
+                        style="margin-top:20px;padding:14px 18px;background:rgba(74,144,217,0.08);border-radius:10px;text-align:center;">
+                        <span style="font-size:17px;color:var(--off-white);">좋은 수행 평가</span>
+                        <span style="font-size:20px;color:var(--blue);font-weight:800;margin:0 8px;">→</span>
+                        <strong style="font-size:20px;color:var(--blue-light);">좋은 세특</strong>
                     </div>
                 </div>
             </div>
             <div class="key-message">
                 <div class="key-message-label">KEY MESSAGE</div>
-                <p>점수만으로는 변별력이 없습니다. 결국 <strong>'수행평가 점수'와 '매일의 학습 루틴'</strong>이 1등급을 가릅니다.</p>
+                <p>점수만으로는 변별력이 없습니다. <br><strong>수행평가의 질이 곧 세특의 질</strong>이며, 이것이 관리 시스템이 필요한 이유입니다.</p>
             </div>
         </div>
 
         <!-- ============================================ -->
         <!-- SLIDE 12: 고교학점 플래너 (오동현) -->
         <!-- ============================================ -->
-        <div class="slide" data-part="3">
+        <div class="slide" data-part="3" style="padding:36px 48px;">
             <div class="slide-badge">솔루션 1</div>
-            <div class="slide-title">
-                <span class="accent">고교학점 플래너</span>
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:6px;">
+                정율사관만의 <span class="accent">고교학점 플래너</span>
             </div>
-            <div class="slide-subtitle">
-                학습 계획을 세우고 실행하며, 스스로 피드백하는<br><strong>'학습 루틴 관리'의 핵심 도구</strong>
+            <div class="slide-subtitle" style="margin-bottom:24px;font-size:15px;">
+                학습 계획을 세우고 실행하며, 스스로 피드백하는 <strong>'학습 루틴 관리'의 핵심 도구</strong>
             </div>
-            <div class="placeholder-box">
-                <div class="ph-icon">📒</div>
-                <div class="ph-text">오동현 선생님 자료 반영 영역<br>학원에서 실제 사용하는 플래너 양식 및 학생 작성 예시 사진</div>
-                <div class="ph-label">자료 대기중</div>
+            <div class="card-grid cols-2" style="max-width:860px;align-items:start;">
+                <div>
+                    <img src="31-1.png" alt="고교학점 플래너 홈" class="img-thumb" onclick="openModal(this.src)">
+                    <div class="img-caption">고교학점 플래너 홈</div>
+                </div>
+                <div>
+                    <img src="31-2.png" alt="고교학점 플래너 기록 페이지" class="img-thumb" onclick="openModal(this.src)">
+                    <div class="img-caption">고교학점 플래너 기록 페이지</div>
+                </div>
             </div>
             <div class="key-message">
                 <div class="key-message-label">KEY MESSAGE</div>
-                <p>단순한 일정 관리가 아닙니다. 학습 계획을 세우고 실행하며, <strong>스스로 피드백하는 '학습 루틴 관리'의 핵심 도구</strong>입니다.</p>
+                <p>단순한 일정 관리가 아닙니다. <br>생기부 활동을 체계적으로 계획하고 실행하며, <strong>스스로 피드백하는 '학습 루틴 관리'의 핵심 도구</strong>입니다.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 12-2: 고교학점 플래너 상세 (오동현) -->
+        <!-- ============================================ -->
+        <div class="slide" data-part="3" style="padding:36px 48px;">
+            <div class="slide-badge">솔루션 1</div>
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:6px;">
+                정율사관만의 <span class="accent">고교학점 플래너</span>
+            </div>
+            <div class="slide-subtitle" style="margin-bottom:24px;font-size:15px;">
+                학습 계획을 세우고 실행하며, 스스로 피드백하는 <strong>'학습 루틴 관리'의 핵심 도구</strong>
+            </div>
+            <div class="card-grid cols-2" style="max-width:860px;align-items:start;">
+                <div>
+                    <img src="32-1.png" alt="고교학점 플래너 상세 1" class="img-thumb" onclick="openModal(this.src)">
+                    <div class="img-caption">고교학점 플래너 상세 1</div>
+                </div>
+                <div>
+                    <img src="32-2.png" alt="고교학점 플래너 상세 2" class="img-thumb" onclick="openModal(this.src)">
+                    <div class="img-caption">고교학점 플래너 상세 2</div>
+                </div>
+            </div>
+            <div style="margin-top:16px;text-align:center;">
+                <span
+                    style="display:inline-block;background:rgba(255,107,107,0.12);border:1px solid rgba(255,107,107,0.3);color:var(--danger);font-size:13px;font-weight:700;padding:8px 20px;border-radius:30px;letter-spacing:0.5px;">
+                    종합반만 사용 가능
+                </span>
+            </div>
+            <div class="key-message">
+                <div class="key-message-label">KEY MESSAGE</div>
+                <p>단순한 일정 관리가 아닙니다. <br>생기부 활동을 체계적으로 계획하고 실행하며, <strong>스스로 피드백하는 '학습 루틴 관리'의 핵심 도구</strong>입니다.</p>
             </div>
         </div>
 
         <!-- ============================================ -->
         <!-- SLIDE 13: 마이크로 피드백 시스템 (오동현) -->
         <!-- ============================================ -->
-        <div class="slide" data-part="3">
+        <div class="slide" data-part="3" style="padding:36px 48px;">
             <div class="slide-badge">솔루션 2</div>
-            <div class="slide-title">
-                <span class="accent">마이크로 피드백</span> 시스템
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:6px;">
+                정율사관만의 <span class="accent">마이크로 피드백</span>
             </div>
-            <div class="process-map">
-                <div class="process-step">
-                    <div class="process-step-icon">📝</div>
-                    <div class="process-step-title">학생 기록</div>
-                    <div class="process-step-desc">플래너/학습 기록<br>매일 작성</div>
-                </div>
-                <div class="process-arrow">→</div>
-                <div class="process-step">
-                    <div class="process-step-icon">🔍</div>
-                    <div class="process-step-title">강사 분석</div>
-                    <div class="process-step-desc">과정을 세밀하게<br>분석 & 코멘트</div>
-                </div>
-                <div class="process-arrow">→</div>
-                <div class="process-step">
-                    <div class="process-step-icon">🎯</div>
-                    <div class="process-step-title">행동 교정</div>
-                    <div class="process-step-desc">미세 단위 피드백으로<br>학습 습관 개선</div>
-                </div>
+            <div class="slide-subtitle" style="margin-bottom:28px;font-size:15px;">
+                학생의 기록 → 강사의 분석 → 행동 교정까지, <strong>촘촘한 3단계 관리</strong>
             </div>
-            <div class="placeholder-box" style="margin-top:24px">
-                <div class="ph-icon">📸</div>
-                <div class="ph-text">오동현 선생님 자료 반영 영역<br>실제 피드백 코멘트 예시 이미지</div>
-                <div class="ph-label">자료 대기중</div>
+            <div class="process-map" style="gap:16px;max-width:1060px;">
+                <div class="process-step" style="padding:36px 28px;min-width:260px;">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">📝</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;">학생 기록</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        플래너에 <strong style="color:var(--white);">매일</strong> 학습 기록 작성<br>
+                        <span style="color:var(--gray);font-size:14px;">수업 내용 · 질문 · 과제 · 감정</span>
+                    </div>
+                </div>
+                <div class="process-arrow" style="font-size:36px;">→</div>
+                <div class="process-step"
+                    style="padding:36px 28px;min-width:260px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">🔍</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;color:var(--blue-light);">
+                        강사의 세밀한 피드백</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        기록을 <strong style="color:var(--white);">하나하나 분석</strong>하여<br>
+                        <span style="color:var(--gray);font-size:14px;">미세 단위 코멘트 & 방향 제시</span>
+                    </div>
+                </div>
+                <div class="process-arrow" style="font-size:36px;">→</div>
+                <div class="process-step" style="padding:36px 28px;min-width:260px;">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">🏆</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;">행동 교정 & 성취</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        학습 습관이 <strong style="color:var(--white);">근본적으로</strong> 개선<br>
+                        <span style="color:var(--gray);font-size:14px;">성적 향상 + 우수한 세특 확보</span>
+                    </div>
+                </div>
             </div>
             <div class="key-message">
                 <div class="key-message-label">KEY MESSAGE</div>
-                <p>학생이 기록을 남기면, 강사가 그 과정을 분석하여 미세한 단위로 피드백을 제공합니다. <strong>이 촘촘한 관리가 성적 향상의 진짜 비결</strong>입니다.</p>
+                <p>학생이 기록을 남기면, 강사가 그 과정을 <strong>미세한 단위로 분석</strong>하여 피드백합니다.<br>이 <strong>촘촘한 관리</strong>가 성적 향상의 진짜
+                    비결입니다.</p>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 14: 맞춤형 문제은행 (오동현) -->
+        <!-- SLIDE 13-2: 마이크로 피드백 활용 예시 (오동현) -->
         <!-- ============================================ -->
-        <div class="slide" data-part="3">
+        <div class="slide" data-part="3" style="padding:36px 48px;">
+            <div class="slide-badge">솔루션 2</div>
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:6px;">
+                <span class="accent">수행평가</span> 완벽 대비 예시
+            </div>
+            <div class="slide-subtitle" style="margin-bottom:24px;font-size:15px;">
+                탐구 보고서 작성 — 마이크로 피드백이 적용되는 3가지 영역
+            </div>
+            <div class="card-grid cols-3" style="max-width:1060px;">
+                <div class="card" style="text-align:center;padding:36px 24px;">
+                    <div class="card-icon" style="font-size:52px;margin-bottom:18px;">📅</div>
+                    <div class="card-title" style="font-size:24px;margin-bottom:14px;">일정 관리</div>
+                    <div class="card-desc" style="font-size:17px;line-height:1.8;">
+                        수행평가 일정을 <strong style="color:var(--white);">미리 파악</strong>하고<br>
+                        단계별 준비 계획을 수립
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,144,217,0.08);border-radius:10px;">
+                        <strong style="font-size:16px;color:var(--blue-light);">체계적 시간 배분</strong>
+                    </div>
+                </div>
+                <div class="card"
+                    style="text-align:center;padding:36px 24px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="card-icon" style="font-size:52px;margin-bottom:18px;">✍️</div>
+                    <div class="card-title" style="font-size:24px;margin-bottom:14px;color:var(--blue-light);">작성 노하우
+                    </div>
+                    <div class="card-desc" style="font-size:17px;line-height:1.8;">
+                        탐구 보고서의 <strong style="color:var(--white);">구조와 핵심</strong><br>
+                        서술 방법을 1:1 코칭
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,144,217,0.12);border-radius:10px;">
+                        <strong style="font-size:16px;color:var(--blue-light);">퀄리티 높은 결과물</strong>
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;padding:36px 24px;">
+                    <div class="card-icon" style="font-size:52px;margin-bottom:18px;">🎤</div>
+                    <div class="card-title" style="font-size:24px;margin-bottom:14px;">발표 자신감</div>
+                    <div class="card-desc" style="font-size:17px;line-height:1.8;">
+                        발표 준비와 <strong style="color:var(--white);">리허설</strong>을 통해<br>
+                        실전 자신감 확보
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,144,217,0.08);border-radius:10px;">
+                        <strong style="font-size:16px;color:var(--blue-light);">실전에서 빛나는 표현력</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="key-message">
+                <div class="key-message-label">KEY MESSAGE</div>
+                <p>수행평가는 단순한 과제가 아닙니다. <br><strong>일정 · 작성 · 발표</strong> 전 과정을 마이크로 피드백으로 관리하면 결과가 달라집니다.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 14: 내신 대비 문제 은행 (오동현) -->
+        <!-- ============================================ -->
+        <div class="slide" data-part="3" style="padding:36px 48px;">
             <div class="slide-badge">솔루션 3</div>
-            <div class="slide-title">
-                <span class="accent">맞춤형 문제은행</span><br>내신 대비
+            <div class="slide-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:6px;">
+                정율사관만의 <span class="accent">내신 대비 문제 은행</span>
             </div>
-            <div class="slide-subtitle">
-                피드백을 통해 발견된 약점을<br><strong>우리 학원만의 문제은행 데이터</strong>로 완벽하게 보완
+            <div class="slide-subtitle" style="margin-bottom:28px;font-size:15px;">
+                피드백을 통해 발견된 약점을 <strong>우리 학원만의 문제은행 데이터</strong>로 완벽하게 보완
             </div>
-            <div class="placeholder-box">
-                <div class="ph-icon">📄</div>
-                <div class="ph-text">오동현 선생님 자료 반영 영역<br>학생 취약점 분석 화면과 제공되는 맞춤형 문제지 이미지</div>
-                <div class="ph-label">자료 대기중</div>
+            <div class="process-map" style="gap:16px;max-width:1060px;">
+                <div class="process-step" style="padding:36px 28px;min-width:260px;">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">🔍</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;">취약점 분석</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        마이크로 피드백에서<br><strong style="color:var(--white);">발견된 약점</strong>을 정밀 파악
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,144,217,0.08);border-radius:10px;">
+                        <span style="font-size:14px;color:var(--gray);">어디가 부족한지 정확히 진단</span>
+                    </div>
+                </div>
+                <div class="process-arrow" style="font-size:36px;">→</div>
+                <div class="process-step"
+                    style="padding:36px 28px;min-width:260px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">📄</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;color:var(--blue-light);">
+                        맞춤형 문제 제공</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        학원 자체 문제은행에서<br><strong style="color:var(--white);">취약 유형별</strong> 문제 선별
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,144,217,0.12);border-radius:10px;">
+                        <strong style="font-size:14px;color:var(--blue-light);">학생마다 다른 맞춤 문제지</strong>
+                    </div>
+                </div>
+                <div class="process-arrow" style="font-size:36px;">→</div>
+                <div class="process-step" style="padding:36px 28px;min-width:260px;">
+                    <div class="process-step-icon" style="font-size:52px;margin-bottom:18px;">💯</div>
+                    <div class="process-step-title" style="font-size:24px;margin-bottom:14px;">완벽한 내신 대비</div>
+                    <div class="process-step-desc" style="font-size:17px;line-height:1.8;">
+                        <strong style="color:var(--white);">반복 학습</strong>으로<br>약점 완전 보완
+                    </div>
+                    <div style="margin-top:18px;padding:12px 16px;background:rgba(74,222,128,0.08);border-radius:10px;">
+                        <strong style="font-size:14px;color:var(--success);">내신 1등급 달성</strong>
+                    </div>
+                </div>
             </div>
             <div class="key-message">
                 <div class="key-message-label">KEY MESSAGE</div>
-                <p>피드백을 통해 발견된 약점은, 우리 학원만의 <strong>퀄리티 높은 문제은행 데이터</strong>를 통해 완벽하게 보완됩니다.</p>
+                <p>피드백을 통해 발견된 약점은, 정율사관의 <strong>퀄리티 높은 문제은행 데이터</strong>를 통해 완벽하게 보완됩니다.</p>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 15: 마무리 & 혜택 안내 -->
+        <!-- SLIDE 15: 마무리 — 자료 배포 -->
         <!-- ============================================ -->
-        <div class="slide" data-part="3">
+        <div class="slide" data-part="3" style="padding:36px 48px;">
             <div class="slide-label">CLOSING</div>
-            <div class="slide-title">
-                오늘부터 <span class="accent">고등학교 생활</span>의<br>밑그림을 그리십시오
+            <div class="slide-title" style="font-size:clamp(24px,4vw,42px);margin-bottom:8px;">
+                내일, <span class="accent">첫 등교</span>.<br>걱정 대신 <span class="accent">준비</span>를 가져가세요
             </div>
-            <div class="card-grid cols-2" style="max-width:700px">
-                <div class="card" style="text-align:center">
-                    <div class="card-icon">📋</div>
-                    <div class="card-title">세특 핵심 문장 점검표</div>
-                    <div class="card-desc">오늘 참석하신 분들께<br><strong>무료 배포</strong></div>
+            <div class="slide-subtitle" style="margin-bottom:28px;font-size:15px;">
+                오늘 참석하신 분들께 드리는 <strong>특별 자료</strong>
+            </div>
+            <div class="card-grid cols-2" style="max-width:800px;">
+                <div class="card" style="text-align:center;padding:36px 28px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="card-icon" style="font-size:52px;margin-bottom:18px;">📘</div>
+                    <div class="card-title" style="font-size:22px;margin-bottom:14px;color:var(--blue-light);">고1을 위한<br>학교 생활 가이드</div>
+                    <div class="card-desc" style="font-size:16px;line-height:1.8;">
+                        내신 · 세특 · 수능의 구조부터<br>
+                        <strong style="color:var(--white);">고등학교 3년 로드맵</strong>까지
+                    </div>
+                    <div style="margin-top:18px;padding:10px 16px;background:rgba(74,222,128,0.1);border-radius:10px;">
+                        <strong style="font-size:14px;color:var(--success);">무료 배포</strong>
+                    </div>
                 </div>
-                <div class="card" style="text-align:center">
-                    <div class="card-icon">📒</div>
-                    <div class="card-title">고교학점 플래너 샘플</div>
-                    <div class="card-desc">이번 주말부터<br><strong>바로 활용 가능</strong></div>
+                <div class="card" style="text-align:center;padding:36px 28px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="card-icon" style="font-size:52px;margin-bottom:18px;">📝</div>
+                    <div class="card-title" style="font-size:22px;margin-bottom:14px;color:var(--blue-light);">탐구보고서 핵심 양식과<br>작성법 가이드</div>
+                    <div class="card-desc" style="font-size:16px;line-height:1.8;">
+                        수행평가에서 바로 쓸 수 있는<br>
+                        <strong style="color:var(--white);">실전 양식 + 작성 노하우</strong>
+                    </div>
+                    <div style="margin-top:18px;padding:10px 16px;background:rgba(74,222,128,0.1);border-radius:10px;">
+                        <strong style="font-size:14px;color:var(--success);">무료 배포</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 16: 마무리 — 전문성 & CTA -->
+        <!-- ============================================ -->
+        <div class="slide" data-part="3" style="padding:36px 48px;">
+            <div class="slide-label">CLOSING</div>
+            <div class="slide-title" style="font-size:clamp(24px,4vw,42px);margin-bottom:12px;">
+                생기부의 <span class="accent">첫 문장</span>부터<br><span class="accent">마지막 마침표</span>까지
+            </div>
+            <div class="slide-subtitle" style="margin-bottom:32px;font-size:18px;">
+                과학 전문가가 옆에 있습니다
+            </div>
+            <div class="card-grid cols-3" style="max-width:960px;">
+                <div class="card" style="text-align:center;padding:32px 20px;">
+                    <div class="card-icon" style="font-size:44px;margin-bottom:14px;">🔬</div>
+                    <div class="card-title" style="font-size:20px;margin-bottom:10px;">과학 내신</div>
+                    <div class="card-desc" style="font-size:15px;line-height:1.7;">
+                        맞춤형 문제은행과<br><strong style="color:var(--white);">마이크로 피드백</strong>으로<br>내신 1등급 완성
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;padding:32px 20px;border-color:rgba(74,144,217,0.3);background:linear-gradient(135deg,var(--card) 0%,#1e2030 100%);">
+                    <div class="card-icon" style="font-size:44px;margin-bottom:14px;">📋</div>
+                    <div class="card-title" style="font-size:20px;margin-bottom:10px;color:var(--blue-light);">세특 · 생기부</div>
+                    <div class="card-desc" style="font-size:15px;line-height:1.7;">
+                        수행평가부터 탐구보고서까지<br><strong style="color:var(--white);">합격하는 생기부</strong>를<br>함께 설계합니다
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;padding:32px 20px;">
+                    <div class="card-icon" style="font-size:44px;margin-bottom:14px;">🎓</div>
+                    <div class="card-title" style="font-size:20px;margin-bottom:10px;">학교 활동 전체</div>
+                    <div class="card-desc" style="font-size:15px;line-height:1.7;">
+                        첫 등교부터 졸업까지<br><strong style="color:var(--white);">3년의 모든 순간</strong>을<br>전문가가 함께합니다
+                    </div>
                 </div>
             </div>
             <div style="text-align:center;margin-top:40px">
-                <div class="slide-subtitle" style="margin-bottom:24px">
-                    Q&A 시간이 이어집니다. 궁금하신 점을 편하게 질문해 주세요.
-                </div>
-                <div class="final-cta">정율사관학원이 끝까지 함께 달리겠습니다</div>
+                <div class="final-cta">내일부터 시작되는 3년, 정율사관학원이 끝까지 함께합니다</div>
             </div>
         </div>
 
+        <!-- ============================================ -->
+        <!-- SLIDE 17: 감사 인사 & Q&A -->
+        <!-- ============================================ -->
+        <div class="slide part-divider" data-part="3">
+            <div style="font-size:clamp(40px,8vw,80px);font-weight:900;text-align:center;line-height:1.3;letter-spacing:-1px;">
+                감사합니다
+            </div>
+            <div style="margin-top:32px;padding:16px 36px;background:rgba(74,144,217,0.1);border:1px solid rgba(74,144,217,0.25);border-radius:40px;">
+                <span style="font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--blue-light);letter-spacing:1px;">Q&A</span>
+                <span style="font-size:clamp(16px,2.5vw,20px);color:var(--off-white);margin-left:12px;">바로 진행됩니다</span>
+            </div>
+            <div style="margin-top:24px;font-size:16px;color:var(--gray);">
+                궁금하신 점을 편하게 질문해 주세요
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== IMAGE MODAL ===== -->
+    <div class="img-modal-overlay" id="imgModal" onclick="closeModal()">
+        <button class="img-modal-close" onclick="closeModal()">&times;</button>
+        <img id="imgModalSrc" src="" alt="확대 이미지">
     </div>
 
     <!-- ===== BOTTOM NAVIGATION ===== -->
@@ -2592,8 +2884,25 @@
             goToSlide(currentIndex + direction);
         }
 
+        // Image modal
+        let modalOpen = false;
+        function openModal(src) {
+            document.getElementById('imgModalSrc').src = src;
+            document.getElementById('imgModal').classList.add('show');
+            modalOpen = true;
+        }
+        function closeModal() {
+            document.getElementById('imgModal').classList.remove('show');
+            modalOpen = false;
+        }
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOpen) {
+                closeModal();
+                return;
+            }
+            if (modalOpen) return;
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
                 changeSlide(1);
