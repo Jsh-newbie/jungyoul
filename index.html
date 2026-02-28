@@ -1,1735 +1,2108 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>정율사관학원 | 고1 학교 생활 가이드 설명회</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --deep: #0a0a0a;
-    --navy: #111111;
-    --blue: #4A90D9;
-    --orange: #4A90D9;
-    --orange-light: #6BB5FF;
-    --white: #FFFFFF;
-    --off-white: #e0e0e0;
-    --gray: #999999;
-    --card: #1a1a1a;
-    --card2: #222222;
-    --border: rgba(255,255,255,0.06);
-    --accent-glow: rgba(74,144,217,0.35);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--deep);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    line-height: 1.6;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정율사관학원 | 고1 학교 생활 가이드 설명회</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep: #0a0a0a;
+            --navy: #111111;
+            --blue: #4A90D9;
+            --orange: #4A90D9;
+            --orange-light: #6BB5FF;
+            --white: #FFFFFF;
+            --off-white: #e0e0e0;
+            --gray: #999999;
+            --card: #1a1a1a;
+            --card2: #222222;
+            --border: rgba(255, 255, 255, 0.06);
+            --accent-glow: rgba(74, 144, 217, 0.35);
+        }
 
-  /* ===== NAV ===== */
-  .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 900;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(20px);
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    box-shadow: none;
-  }
-  .nav-logo-img {
-    height: 32px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-  }
-  .nav-cta {
-    background: var(--orange);
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 10px 22px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-  }
-  .nav-cta:hover { background: var(--orange-light); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(165deg, #111111 0%, #0a0a0a 50%, #0d0d0d 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 120px 24px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(74,144,217,0.15) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -80px;
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(107,181,255,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(74,144,217,0.12);
-    border: 1px solid rgba(74,144,217,0.25);
-    color: var(--orange-light);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 30px;
-    margin-bottom: 28px;
-    letter-spacing: 0.5px;
-    animation: fadeDown 0.8s ease both;
-  }
-  .hero-title {
-    font-size: clamp(32px, 7vw, 56px);
-    font-weight: 900;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    letter-spacing: -1.5px;
-    animation: fadeDown 0.9s 0.1s ease both;
-  }
-  .hero-title .accent {
-    color: var(--orange);
-  }
-  .hero-sub {
-    font-size: clamp(16px, 3.5vw, 20px);
-    color: var(--gray);
-    margin-bottom: 40px;
-    max-width: 560px;
-    line-height: 1.8;
-    animation: fadeDown 1s 0.2s ease both;
-  }
-  .hero-sub strong { color: var(--white); }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* countdown */
-  .countdown-wrap {
-    animation: fadeDown 1.1s 0.3s ease both;
-    margin-bottom: 36px;
-  }
-  .countdown-label {
-    font-size: 13px;
-    color: var(--gray);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .countdown {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-  }
-  .cd-box {
-    background: rgba(74,144,217,0.1);
-    border: 1px solid rgba(74,144,217,0.2);
-    border-radius: 14px;
-    padding: 16px 20px;
-    text-align: center;
-    min-width: 76px;
-  }
-  .cd-num {
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--orange);
-    line-height: 1;
-    display: block;
-  }
-  .cd-unit {
-    font-size: 12px;
-    color: var(--gray);
-    margin-top: 6px;
-    letter-spacing: 1px;
-  }
+        body {
+            background: var(--deep);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-  .hero-date-badge {
-    animation: fadeDown 1.2s 0.4s ease both;
-    background: var(--blue);
-    border-radius: 16px;
-    padding: 18px 32px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-  .hero-date-badge .date-main {
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 1px;
-  }
-  .hero-date-badge .date-sub {
-    font-size: 14px;
-    color: var(--off-white);
-    opacity: 0.8;
-  }
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: none;
+        }
 
-  /* ===== FLOATING CTA ===== */
-  .float-cta {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    background: var(--orange);
-    color: white;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    padding: 16px 36px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 8px 32px rgba(74,144,217,0.5);
-    white-space: nowrap;
-    animation: pulse 2s infinite;
-    text-decoration: none;
-    display: block;
-  }
-  @keyframes pulse {
-    0%,100% { box-shadow: 0 8px 32px rgba(74,144,217,0.5); }
-    50% { box-shadow: 0 8px 48px rgba(74,144,217,0.85); transform: translateX(-50%) scale(1.03); }
-  }
+        .nav-logo-img {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
 
-  @keyframes fadeDown {
-    from { opacity:0; transform: translateY(-20px); }
-    to { opacity:1; transform: translateY(0); }
-  }
+        .nav-cta {
+            background: var(--orange);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
 
-  /* ===== CRISIS SECTION ===== */
-  .crisis-section {
-    background: var(--navy);
-    text-align: center;
-  }
-  .crisis-section .section-title,
-  .crisis-section .section-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .crisis-body {
-    font-size: clamp(15px, 2.6vw, 18px);
-    color: var(--gray);
-    line-height: 1.9;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 48px;
-  }
-  .crisis-body strong { color: var(--white); font-weight: 700; }
-  .crisis-body .accent-text { color: var(--orange); font-weight: 700; }
-  .crisis-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .crisis-card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 32px 24px;
-    text-align: center;
-    transition: all 0.4s ease;
-  }
-  .crisis-card:hover {
-    border-color: rgba(74,144,217,0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-  }
-  .crisis-card-icon { font-size: 32px; margin-bottom: 16px; }
-  .crisis-card-number {
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: 900;
-    color: var(--orange);
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
-  .crisis-card-desc {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-  .crisis-card-desc strong { color: var(--white); }
-  @media (max-width: 767px) {
-    .crisis-cards {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-    }
-  }
+        .nav-cta:hover {
+            background: var(--orange-light);
+        }
 
-  /* ===== STRENGTH ITEMS ===== */
-  .strength-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 24px;
-    transition: all 0.4s ease;
-  }
-  .strength-item:hover {
-    border-color: rgba(74,144,217,0.2);
-    transform: translateX(4px);
-  }
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(165deg, #111111 0%, #0a0a0a 50%, #0d0d0d 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* ===== INFO CARDS ===== */
-  .info-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 900px;
-    margin: 36px auto 0;
-  }
-  .info-card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 32px 28px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
-  .info-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--orange), var(--orange-light));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .info-card:hover::before { transform: scaleX(1); }
-  .info-card:hover {
-    border-color: rgba(74,144,217,0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-  }
-  .info-card-icon { font-size: 36px; margin-bottom: 16px; }
-  .info-card-num {
-    position: absolute;
-    top: 20px; right: 24px;
-    font-size: 48px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.04);
-  }
-  .info-card-title {
-    font-size: clamp(18px, 3vw, 22px);
-    font-weight: 800;
-    margin-bottom: 12px;
-    color: var(--white);
-  }
-  .info-card-desc {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.7;
-  }
-  .info-card-desc strong { color: var(--white); }
-  @media (max-width: 767px) {
-    .info-cards { grid-template-columns: 1fr; }
-  }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
 
-  /* ===== DIVIDER ===== */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-    margin: 0 24px;
-  }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(107, 181, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
 
-  /* ===== SECTION BASE ===== */
-  section { padding: 72px 24px; }
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--orange);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .section-title {
-    font-size: clamp(26px, 7vw, 40px);
-    font-weight: 900;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-  }
-  .section-desc {
-    font-size: 16px;
-    color: var(--gray);
-    line-height: 1.8;
-    max-width: 500px;
-  }
-  .section-desc strong { color: var(--white); }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(74, 144, 217, 0.12);
+            border: 1px solid rgba(74, 144, 217, 0.25);
+            color: var(--orange-light);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+            animation: fadeDown 0.8s ease both;
+        }
 
-  /* ===== HOOK SECTION ===== */
-  .hook-section {
-    background: var(--navy);
-    text-align: center;
-  }
-  .hook-section .section-title,
-  .hook-section .section-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hook-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 36px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hook-card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 28px 24px;
-    border-left: 4px solid var(--orange);
-    position: relative;
-    overflow: hidden;
-    text-align: left;
-  }
-  .hook-card::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 80px; height: 80px;
-    background: radial-gradient(circle, rgba(74,144,217,0.08), transparent);
-  }
-  .hook-card-icon {
-    font-size: 28px;
-    margin-bottom: 10px;
-    display: block;
-  }
-  .hook-card-title {
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--white);
-  }
-  .hook-card-desc {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.7;
-  }
-  .hook-card-desc strong { color: var(--orange-light); }
+        .hero-title {
+            font-size: clamp(32px, 7vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            animation: fadeDown 0.9s 0.1s ease both;
+        }
 
-  /* ===== VIDEO SECTION ===== */
-  .video-section {
-    background: var(--navy);
-    text-align: center;
-  }
-  .video-wrap {
-    margin-top: 28px;
-    position: relative;
-    padding-bottom: 56.25%;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 2px solid rgba(255,255,255,0.06);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .video-wrap iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-  }
-  .sbs-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,0,0,0.08);
-    border: 1px solid rgba(255,0,0,0.2);
-    color: #ff6b6b;
-    font-size: 13px;
-    font-weight: 900;
-    padding: 8px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
+        .hero-title .accent {
+            color: var(--orange);
+        }
 
-  /* ===== DIFF SECTION ===== */
-  .diff-section {
-    background: var(--navy);
-    text-align: center;
-  }
-  .diff-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 36px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .diff-card {
-    background: var(--card2);
-    border-radius: 20px;
-    padding: 28px 24px;
-    border: 1px solid rgba(255,255,255,0.06);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .diff-card:hover { border-color: var(--orange); }
-  .diff-icon {
-    font-size: 36px;
-    margin-bottom: 14px;
-    display: block;
-  }
-  .diff-card-num {
-    position: absolute;
-    top: 20px; right: 24px;
-    font-size: 52px;
-    font-weight: 900;
-    color: rgba(74,144,217,0.1);
-    line-height: 1;
-  }
-  .diff-card-title {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 8px;
-    color: var(--white);
-  }
-  .diff-card-sub {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--orange);
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-  }
-  .diff-card {
-    text-align: left;
-  }
-  .diff-card-desc {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.8;
-  }
-  .diff-card-desc strong { color: var(--white); }
+        .hero-sub {
+            font-size: clamp(16px, 3.5vw, 20px);
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 560px;
+            line-height: 1.8;
+            animation: fadeDown 1s 0.2s ease both;
+        }
 
-  /* ===== TEAM SECTION ===== */
-  .team-section {
-    background: var(--deep);
-    text-align: center;
-  }
-  .team-section .section-title,
-  .team-section .section-desc {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .team-section .section-label {
-    text-align: center;
-  }
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 36px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .team-card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 22px 16px;
-    border: 1px solid rgba(255,255,255,0.06);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-  .team-card.leader {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
-    border: 2px solid var(--orange);
-  }
-  .team-card:hover { transform: translateY(-3px); }
-  .team-avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), var(--orange));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin: 0 auto 12px;
-    overflow: hidden;
-  }
-  .team-avatar img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
-  .team-card.leader .team-avatar {
-    width: 68px; height: 68px;
-    font-size: 28px;
-    border: 2px solid var(--orange);
-  }
-  .team-badge {
-    font-size: 10px;
-    font-weight: 700;
-    background: var(--orange);
-    color: white;
-    padding: 3px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-  }
-  .team-name {
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 4px;
-  }
-  .team-card.leader .team-name { font-size: 22px; }
-  .team-spec {
-    font-size: 12px;
-    color: var(--gray);
-    line-height: 1.6;
-  }
+        .hero-sub strong {
+            color: var(--white);
+        }
 
-  /* ===== PROGRAM SECTION ===== */
-  .program-section {
-    background: var(--deep);
-  }
-  .program-section .section-title,
-  .program-section .section-desc {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .program-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 36px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .program-card {
-    background: var(--card2);
-    border-radius: 20px;
-    padding: 28px 24px;
-    border: 1px solid rgba(255,255,255,0.06);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .program-card:hover { border-color: var(--orange); }
-  .program-card-accent {
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px; height: 100%;
-  }
-  .program-card-accent.blue { background: var(--blue); }
-  .program-card-accent.orange { background: var(--orange); }
-  .program-card-accent.purple { background: var(--orange-light); }
-  .program-card-num {
-    position: absolute;
-    top: 20px; right: 24px;
-    font-size: 52px;
-    font-weight: 900;
-    color: rgba(74,144,217,0.1);
-    line-height: 1;
-  }
-  .program-card-part {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--orange);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-  }
-  .program-card-title {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 14px;
-    color: var(--white);
-  }
-  .program-card-items {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 18px;
-  }
-  .program-card-items li {
-    font-size: 14px;
-    color: var(--off-white);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    line-height: 1.5;
-  }
-  .program-card-items li::before {
-    content: '\2713';
-    color: var(--orange-light);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .program-card-speaker {
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .speaker-avatar {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-  .speaker-info {
-    font-size: 13px;
-    color: var(--gray);
-  }
+        /* countdown */
+        .countdown-wrap {
+            animation: fadeDown 1.1s 0.3s ease both;
+            margin-bottom: 36px;
+        }
 
-  /* ===== PORTFOLIO (생기부 사례) SECTION ===== */
-  .portfolio-section {
-    background: var(--navy);
-    text-align: center;
-  }
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 36px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .portfolio-card {
-    background: var(--card2);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-  .portfolio-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-3px);
-  }
-  .portfolio-card-img {
-    width: 100%;
-    display: block;
-  }
-  .portfolio-card-body {
-    padding: 20px 24px;
-    text-align: left;
-  }
-  .portfolio-card-tag {
-    display: inline-block;
-    background: rgba(74,144,217,0.15);
-    color: var(--orange-light);
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-  }
-  .portfolio-card-title {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-  .portfolio-card-desc {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.7;
-  }
-  .portfolio-note {
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--gray);
-    opacity: 0.7;
-  }
-  @media (min-width: 768px) {
-    .portfolio-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+        .countdown-label {
+            font-size: 13px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
 
-  /* ===== BENEFIT SECTION ===== */
-  .benefit-section {
-    background: var(--navy);
-    position: relative;
-    overflow: hidden;
-  }
-  .benefit-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: none;
-  }
-  .benefit-section .section-title,
-  .benefit-section .section-desc {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  }
-  .benefit-section .section-label {
-    text-align: center;
-    position: relative;
-  }
-  .benefit-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 36px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  }
-  .benefit-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 22px 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .benefit-icon {
-    width: 48px; height: 48px;
-    background: var(--orange);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-  .benefit-text h4 {
-    font-size: 17px;
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
-  .benefit-text p {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.7;
-  }
+        .countdown {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
 
-  /* ===== FAQ SECTION ===== */
-  .faq-section { background: var(--deep); text-align: center; }
-  .faq-list { max-width: 800px; margin: 36px auto 0; }
-  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); overflow: hidden; }
-  .faq-q {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: none;
-    border: none;
-    padding: 22px 0;
-    color: var(--white);
-    font-size: clamp(16px, 2.8vw, 19px);
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    gap: 12px;
-  }
-  .faq-q .faq-icon {
-    font-size: 20px;
-    color: var(--orange);
-    transition: transform 0.3s;
-    flex-shrink: 0;
-  }
-  .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s;
-  }
-  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
-  .faq-a p { font-size: 15px; color: var(--gray); line-height: 1.7; text-align: left; }
-  .faq-a strong { color: var(--white); font-weight: 700; }
-  .faq-a ul { text-align: left; list-style: none; padding: 0; margin: 8px 0 0; }
-  .faq-a ul li { position: relative; padding-left: 18px; margin-bottom: 6px; font-size: 15px; color: var(--gray); line-height: 1.7; }
-  .faq-a ul li::before { content: "·"; position: absolute; left: 4px; color: var(--blue); font-weight: 700; }
+        .cd-box {
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            border-radius: 14px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 76px;
+        }
 
-  /* ===== FORM SECTION ===== */
-  .form-section {
-    background: var(--navy);
-    padding: 72px 24px 100px;
-  }
-  .form-container {
-    max-width: 640px;
-    margin: 0 auto;
-    background: var(--card2);
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-  }
-  .form-header {
-    background: var(--blue);
-    padding: 28px 24px;
-    text-align: center;
-  }
-  .form-header h2 {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
-  .form-header p {
-    font-size: 13px;
-    color: var(--off-white);
-    opacity: 0.8;
-  }
-  .form-body {
-    padding: 32px 24px;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .form-group.full {
-    grid-column: 1 / -1;
-  }
-  .form-group label {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--off-white);
-  }
-  .form-group input[type="text"],
-  .form-group input[type="tel"],
-  .form-group select {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 15px;
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  .form-group input:focus,
-  .form-group select:focus {
-    border-color: var(--orange);
-  }
-  .form-group select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238899BB' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-  }
-  .form-group select option {
-    background: var(--card2);
-    color: var(--white);
-  }
-  .radio-group {
-    display: flex;
-    gap: 16px;
-    padding-top: 4px;
-  }
-  .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    color: var(--off-white);
-  }
-  .radio-label input[type="radio"] {
-    accent-color: var(--orange);
-    width: 16px;
-    height: 16px;
-  }
-  .checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 18px 0;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: 8px;
-  }
-  .checkbox-group input[type="checkbox"] {
-    accent-color: var(--orange);
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-    flex-shrink: 0;
-    cursor: pointer;
-  }
-  .checkbox-group span {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.6;
-    cursor: pointer;
-  }
-  .form-submit {
-    width: 100%;
-    background: var(--orange);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    padding: 18px;
-    border-radius: 14px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 8px 32px rgba(74,144,217,0.3);
-    transition: all 0.3s;
-    margin-top: 8px;
-  }
-  .form-submit:hover {
-    background: var(--orange-light);
-    transform: translateY(-2px);
-  }
-  .form-submit:disabled {
-    background: var(--blue);
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-  }
+        .cd-num {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--orange);
+            line-height: 1;
+            display: block;
+        }
 
-  /* success */
-  .form-success {
-    text-align: center;
-    padding: 40px 24px;
-    display: none;
-  }
-  .form-success.active { display: block; }
-  .form-success-icon {
-    width: 64px; height: 64px;
-    background: rgba(34,197,94,0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 20px;
-  }
-  .form-success h3 {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 12px;
-  }
-  .form-success p {
-    font-size: 14px;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-  .form-success a {
-    color: var(--orange-light);
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-  }
+        .cd-unit {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
 
-  /* ===== FOOTER ===== */
-  .footer {
-    background: #0a0a0a;
-    padding: 32px 24px;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-logo {
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 8px;
-  }
-  .footer-info {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.8;
-  }
+        .hero-date-badge {
+            animation: fadeDown 1.2s 0.4s ease both;
+            background: var(--blue);
+            border-radius: 16px;
+            padding: 18px 32px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
 
-  /* ===== SCROLL REVEAL ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+        .hero-date-badge .date-main {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
 
-  /* ===== RESPONSIVE ===== */
-  @media (min-width: 768px) {
-    .hook-cards {
-      grid-template-columns: 1fr;
-      max-width: 900px;
-    }
-    .program-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .benefit-cards {
-      grid-template-columns: 1fr 1fr;
-      max-width: 800px;
-    }
-    .form-container {
-      max-width: 700px;
-    }
-    .form-body {
-      padding: 40px 36px;
-    }
-  }
-  @media (max-width: 767px) {
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-    .hero-info {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-</style>
+        .hero-date-badge .date-sub {
+            font-size: 14px;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        /* ===== FLOATING CTA ===== */
+        .float-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            background: var(--orange);
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(74, 144, 217, 0.5);
+            white-space: nowrap;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            display: block;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 32px rgba(74, 144, 217, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 8px 48px rgba(74, 144, 217, 0.85);
+                transform: translateX(-50%) scale(1.03);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CRISIS SECTION ===== */
+        .crisis-section {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .crisis-section .section-title,
+        .crisis-section .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .crisis-body {
+            font-size: clamp(15px, 2.6vw, 18px);
+            color: var(--gray);
+            line-height: 1.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 48px;
+        }
+
+        .crisis-body strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .crisis-body .accent-text {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .crisis-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .crisis-card {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .crisis-card:hover {
+            border-color: rgba(74, 144, 217, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        .crisis-card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .crisis-card-number {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 900;
+            color: var(--orange);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .crisis-card-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .crisis-card-desc strong {
+            color: var(--white);
+        }
+
+        @media (max-width: 767px) {
+            .crisis-cards {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+
+        /* ===== STRENGTH ITEMS ===== */
+        .strength-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .strength-item:hover {
+            border-color: rgba(74, 144, 217, 0.2);
+            transform: translateX(4px);
+        }
+
+        /* ===== INFO CARDS ===== */
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 36px auto 0;
+        }
+
+        .info-card {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .info-card:hover {
+            border-color: rgba(74, 144, 217, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-card-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .info-card-num {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.04);
+        }
+
+        .info-card-title {
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .info-card-desc {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .info-card-desc strong {
+            color: var(--white);
+        }
+
+        @media (max-width: 767px) {
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            margin: 0 24px;
+        }
+
+        /* ===== SECTION BASE ===== */
+        section {
+            padding: 72px 24px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--orange);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(26px, 7vw, 40px);
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .section-desc strong {
+            color: var(--white);
+        }
+
+        /* ===== HOOK SECTION ===== */
+        .hook-section {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .hook-section .section-title,
+        .hook-section .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hook-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 36px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hook-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border-left: 4px solid var(--orange);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .hook-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.08), transparent);
+        }
+
+        .hook-card-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hook-card-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .hook-card-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .hook-card-desc strong {
+            color: var(--orange-light);
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .video-wrap {
+            margin-top: 28px;
+            position: relative;
+            padding-bottom: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .sbs-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 0, 0, 0.08);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            color: #ff6b6b;
+            font-size: 13px;
+            font-weight: 900;
+            padding: 8px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== DIFF SECTION ===== */
+        .diff-section {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .diff-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 36px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .diff-card {
+            background: var(--card2);
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .diff-card:hover {
+            border-color: var(--orange);
+        }
+
+        .diff-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .diff-card-num {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(74, 144, 217, 0.1);
+            line-height: 1;
+        }
+
+        .diff-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .diff-card-sub {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .diff-card {
+            text-align: left;
+        }
+
+        .diff-card-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .diff-card-desc strong {
+            color: var(--white);
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            background: var(--deep);
+            text-align: center;
+        }
+
+        .team-section .section-title,
+        .team-section .section-desc {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-section .section-label {
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 22px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .team-card.leader {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+            border: 2px solid var(--orange);
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin: 0 auto 12px;
+            overflow: hidden;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card.leader .team-avatar {
+            width: 68px;
+            height: 68px;
+            font-size: 28px;
+            border: 2px solid var(--orange);
+        }
+
+        .team-badge {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--orange);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .team-name {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .team-card.leader .team-name {
+            font-size: 22px;
+        }
+
+        .team-spec {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ===== PROGRAM SECTION ===== */
+        .program-section {
+            background: var(--deep);
+        }
+
+        .program-section .section-title,
+        .program-section .section-desc {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .program-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 36px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .program-card {
+            background: var(--card2);
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .program-card:hover {
+            border-color: var(--orange);
+        }
+
+        .program-card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .program-card-accent.blue {
+            background: var(--blue);
+        }
+
+        .program-card-accent.orange {
+            background: var(--orange);
+        }
+
+        .program-card-accent.purple {
+            background: var(--orange-light);
+        }
+
+        .program-card-num {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(74, 144, 217, 0.1);
+            line-height: 1;
+        }
+
+        .program-card-part {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .program-card-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--white);
+        }
+
+        .program-card-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .program-card-items li {
+            font-size: 14px;
+            color: var(--off-white);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .program-card-items li::before {
+            content: '\2713';
+            color: var(--orange-light);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .program-card-speaker {
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .speaker-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .speaker-info {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ===== PORTFOLIO (생기부 사례) SECTION ===== */
+        .portfolio-section {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 36px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-card {
+            background: var(--card2);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-3px);
+        }
+
+        .portfolio-card-img {
+            width: 100%;
+            display: block;
+        }
+
+        .portfolio-card-body {
+            padding: 20px 24px;
+            text-align: left;
+        }
+
+        .portfolio-card-tag {
+            display: inline-block;
+            background: rgba(74, 144, 217, 0.15);
+            color: var(--orange-light);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-card-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .portfolio-card-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .portfolio-note {
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--gray);
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ===== BENEFIT SECTION ===== */
+        .benefit-section {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: none;
+        }
+
+        .benefit-section .section-title,
+        .benefit-section .section-desc {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .benefit-section .section-label {
+            text-align: center;
+            position: relative;
+        }
+
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 22px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--orange);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .benefit-text h4 {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .benefit-text p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            background: var(--deep);
+            text-align: center;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 36px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: none;
+            border: none;
+            padding: 22px 0;
+            color: var(--white);
+            font-size: clamp(16px, 2.8vw, 19px);
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            gap: 12px;
+        }
+
+        .faq-q .faq-icon {
+            font-size: 20px;
+            color: var(--orange);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-q .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding-bottom: 22px;
+        }
+
+        .faq-a p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .faq-a strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .faq-a ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+        }
+
+        .faq-a ul li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .faq-a ul li::before {
+            content: "·";
+            position: absolute;
+            left: 4px;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            background: var(--navy);
+            padding: 72px 24px 100px;
+        }
+
+        .form-container {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--card2);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: var(--blue);
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .form-header p {
+            font-size: 13px;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        .form-body {
+            padding: 32px 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--off-white);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group select {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 15px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--orange);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238899BB' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-group select option {
+            background: var(--card2);
+            color: var(--white);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 16px;
+            padding-top: 4px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--off-white);
+        }
+
+        .radio-label input[type="radio"] {
+            accent-color: var(--orange);
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            accent-color: var(--orange);
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-group span {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--orange);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            padding: 18px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(74, 144, 217, 0.3);
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: var(--orange-light);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background: var(--blue);
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* success */
+        .form-success {
+            text-align: center;
+            padding: 40px 24px;
+            display: none;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .form-success-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(34, 197, 94, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .form-success h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .form-success a {
+            color: var(--orange-light);
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a0a0a;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .footer-info {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 768px) {
+            .hook-cards {
+                grid-template-columns: 1fr;
+                max-width: 900px;
+            }
+
+            .program-cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefit-cards {
+                grid-template-columns: 1fr 1fr;
+                max-width: 800px;
+            }
+
+            .form-container {
+                max-width: 700px;
+            }
+
+            .form-body {
+                padding: 40px 36px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- FLOATING CTA -->
-<a href="#register-form" class="float-cta">설명회 참가 신청하기</a>
+    <!-- FLOATING CTA -->
+    <a href="#register-form" class="float-cta">설명회 참가 신청하기</a>
 
-<!-- NAV -->
-<nav class="nav">
-  <img src="logo.png" alt="정율사관학원" class="nav-logo-img">
-  <a href="#register-form" class="nav-cta">설명회 신청하기</a>
-</nav>
+    <!-- NAV -->
+    <nav class="nav">
+        <img src="logo.png" alt="정율사관학원" class="nav-logo-img">
+        <a href="#register-form" class="nav-cta">설명회 신청하기</a>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">고교학점제 전문</div>
-  <h1 class="hero-title">
-    "생기부·세특,<br>지금이<br><span class="accent">골든타임입니다."</span>
-  </h1>
-  <p class="hero-sub">
-    예비 고1 특별 설명회<br>
-    <strong>2025년 3월 2일 (일) 오후 4시</strong>
-  </p>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">고교학점제 전문</div>
+        <h1 class="hero-title">
+            "생기부·세특,<br>지금이<br><span class="accent">골든타임입니다."</span>
+        </h1>
+        <p class="hero-sub">
+            예비 고1 특별 설명회<br>
+            <strong>2025년 3월 2일 (일) 오후 4시</strong>
+        </p>
 
-  <div class="countdown-wrap">
-    <div class="countdown-label">설명회까지 남은 시간</div>
-    <div class="countdown">
-      <div class="cd-box"><span class="cd-num" id="cd-d">00</span><div class="cd-unit">일</div></div>
-      <div class="cd-box"><span class="cd-num" id="cd-h">00</span><div class="cd-unit">시간</div></div>
-      <div class="cd-box"><span class="cd-num" id="cd-m">00</span><div class="cd-unit">분</div></div>
-      <div class="cd-box"><span class="cd-num" id="cd-s">00</span><div class="cd-unit">초</div></div>
-    </div>
-  </div>
-
-  <div class="hero-date-badge">
-    <span class="date-main">📅 3월 2일 (월) 오후 4시</span>
-    <span class="date-sub">정율사관학원 대강당 · 무료 입장</span>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROGRAM: 3 PARTS -->
-<section class="program-section">
-  <div class="reveal">
-    <div class="section-label" style="text-align:center">Program</div>
-    <h2 class="section-title" style="text-align:center">설명회 <span style="color:var(--orange)">핵심 프로그램</span></h2>
-    <p class="section-desc" style="text-align:center;margin:0 auto;">단순한 정보 전달이 아닌, <strong>당장 써먹을 수 있는 '디테일'</strong>을 해부합니다.</p>
-  </div>
-  <div class="program-cards">
-    <!-- Part 1 -->
-    <div class="program-card reveal">
-      <div class="program-card-accent blue"></div>
-      <div class="program-card-num">01</div>
-      <div class="program-card-part">1부 (약 25분)</div>
-      <div class="program-card-title">고교 입시의 판도 변화와 과학의 무게</div>
-      <ul class="program-card-items">
-        <li>고교학점제에서의 내신이란?</li>
-        <li>고등학생들의 희망 진로는?</li>
-        <li>수능 개편안 속 통합과학의 파급력</li>
-      </ul>
-      <div class="program-card-speaker">
-        <div class="speaker-avatar">지성현</div>
-        <div class="speaker-info">정율사관 과학과 팀장</div>
-      </div>
-    </div>
-    <!-- Part 2 -->
-    <div class="program-card reveal">
-      <div class="program-card-accent orange"></div>
-      <div class="program-card-num">02</div>
-      <div class="program-card-part">2부 (약 45분)</div>
-      <div class="program-card-title">실제 사례로 보는 '합격하는 생기부'의 비밀</div>
-      <ul class="program-card-items">
-        <li>부천 관내 고교 실제 생기부 해부</li>
-        <li>성공하는 고등학교 생활 가이드</li>
-        <li>수행평가를 활용한 생기부 기록의 4요소</li>
-      </ul>
-      <div class="program-card-speaker">
-        <div class="speaker-avatar">박주연</div>
-        <div class="speaker-info">정율사관 과학과 전문강사</div>
-      </div>
-    </div>
-    <!-- Part 3 -->
-    <div class="program-card reveal">
-      <div class="program-card-accent purple"></div>
-      <div class="program-card-num">03</div>
-      <div class="program-card-part">3부 (약 30분)</div>
-      <div class="program-card-title">1등급을 만드는 정율사관만의 '관리 시스템'</div>
-      <ul class="program-card-items">
-        <li>학습 루틴을 잡는 '고교학점 플래너' 작성법</li>
-        <li>취약점을 완벽 교정하는 '마이크로 피드백'</li>
-        <li>부천 지역 맞춤형 자체 문제은행 시스템</li>
-      </ul>
-      <div class="program-card-speaker">
-        <div class="speaker-avatar">오동현</div>
-        <div class="speaker-info">정율사관 과학과 전문강사</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PORTFOLIO: 실제 생기부 사례 -->
-<section class="portfolio-section">
-  <div class="reveal">
-    <div class="section-label">Real Records</div>
-    <h2 class="section-title">이 생기부,<br><span style="color:var(--orange)">실제로 대학을 바꿨습니다</span></h2>
-    <p class="section-desc" style="margin:0 auto">설명회에서 공개되는 <strong>실제 합격생의 생활기록부</strong>입니다.<br>세특 한 줄이 어떻게 합불을 가르는지, 직접 확인하세요.</p>
-  </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-card reveal">
-      <img src="스크린샷 2026-02-27 오후 10.20.10.png" alt="과학탐구실험 세특 기록 실제 사례" class="portfolio-card-img">
-      <div class="portfolio-card-body">
-        <span class="portfolio-card-tag">과학탐구실험 · 세특</span>
-        <div class="portfolio-card-title">생태계와 도시화 연구 탐구 기록</div>
-        <div class="portfolio-card-desc">실제 학생의 과학탐구실험 세특 기록입니다. 이런 수준의 탐구 설계와 기록이 상위권 대학 합격의 열쇠입니다.</div>
-      </div>
-    </div>
-    <div class="portfolio-card reveal">
-      <img src="스크린샷 2026-02-27 오후 10.20.31.png" alt="동아리활동 기록 실제 사례" class="portfolio-card-img">
-      <div class="portfolio-card-body">
-        <span class="portfolio-card-tag">동아리활동 · 생기부</span>
-        <div class="portfolio-card-title">머신러닝 활용 수학 탐구 활동</div>
-        <div class="portfolio-card-desc">미적분 개념을 머신러닝에 접목한 동아리 활동 기록입니다. 교과 연계 심화 탐구의 모범 사례입니다.</div>
-      </div>
-    </div>
-  </div>
-  <p class="portfolio-note reveal">* 개인정보 보호를 위해 일부 내용이 블러 처리되었습니다.</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- CRISIS: WHY NOW -->
-<section class="crisis-section">
-  <div class="reveal">
-    <div class="section-label">Why Now?</div>
-    <h2 class="section-title">고1 첫 학기,<br><span style="color:var(--orange)">생기부가 시작됩니다.</span></h2>
-  </div>
-  <div class="crisis-body reveal">
-    고등학교 입학과 동시에 <strong>생활기록부(생기부)</strong>가 작성됩니다.<br>
-    세부능력 및 특기사항(세특)은 <strong>대입에서 가장 중요한 평가 요소</strong>입니다.<br><br>
-    하지만 대부분의 예비 고1 학생과 학부모님은<br>
-    <span class="accent-text">"세특이 뭔지", "어떻게 관리하는지"</span> 모른 채 입학합니다.
-  </div>
-  <div class="crisis-cards">
-    <div class="crisis-card reveal">
-      <div class="crisis-card-icon">⚠️</div>
-      <div class="crisis-card-number">73%</div>
-      <div class="crisis-card-desc">예비 고1 학생 중<br><strong>세특이 무엇인지 모르는 비율</strong></div>
-    </div>
-    <div class="crisis-card reveal">
-      <div class="crisis-card-icon">📉</div>
-      <div class="crisis-card-number">1학기</div>
-      <div class="crisis-card-desc">고1 첫 학기 세특을 놓치면<br><strong>3년간 만회가 어렵습니다</strong></div>
-    </div>
-    <div class="crisis-card reveal">
-      <div class="crisis-card-icon">🎯</div>
-      <div class="crisis-card-number">수시<br>72%</div>
-      <div class="crisis-card-desc">대학 입시의 72%가 수시전형<br><strong>생기부가 곧 합격의 열쇠</strong></div>
-    </div>
-  </div>
-  <div class="crisis-conclusion reveal" style="margin-top:36px;max-width:900px;margin-left:auto;margin-right:auto;padding:32px;background:linear-gradient(135deg,rgba(74,144,217,0.06),rgba(74,144,217,0.02));border:1px solid rgba(255,255,255,0.06);border-radius:16px;text-align:center;">
-    <p style="font-size:clamp(18px,3.5vw,24px);font-weight:800;line-height:1.6;">"모르면 뒤처집니다.<br>알면 전략이 됩니다."</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- HOOK: WHY NOW -->
-<section class="hook-section">
-  <div class="reveal">
-    <div class="section-label">Reality Check</div>
-    <h2 class="section-title">같은 성적,<br><span style="color:var(--orange)">다른 대학</span>의 비밀</h2>
-    <p class="section-desc">입학사정관은 성적표만 보지 않습니다.<br><strong>세특 3줄</strong>이 당락을 바꿉니다.</p>
-  </div>
-  <div class="hook-cards">
-    <div class="hook-card reveal">
-      <span class="hook-card-icon">🎯</span>
-      <div class="hook-card-title">세특은 고1 1학기부터 시작된다</div>
-      <div class="hook-card-desc">대부분의 학생이 고3이 되어서야 세특을 알게 됩니다. 하지만 입학사정관은 <strong>고1 세특부터 꼼꼼히 봅니다.</strong> 늦게 시작하면 절대 따라잡을 수 없어요.</div>
-    </div>
-    <div class="hook-card reveal">
-      <span class="hook-card-icon">📋</span>
-      <div class="hook-card-title">과학 세특은 이과만의 이야기가 아니다</div>
-      <div class="hook-card-desc">의대, 약대, 경영, 심지어 문과 계열에서도 <strong>과학 세특의 깊이</strong>가 합불을 가릅니다. 모르면 손해입니다.</div>
-    </div>
-    <div class="hook-card reveal">
-      <span class="hook-card-icon">🏫</span>
-      <div class="hook-card-title">학교 선생님만 믿으면 늦는다</div>
-      <div class="hook-card-desc">학교 선생님은 30명 이상의 학생을 동시에 담당합니다. <strong>나만을 위한 세특 전략</strong>은 전문가의 도움이 필요합니다.</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SBS VIDEO SECTION -->
-<section class="video-section">
-  <div class="reveal">
-    <div class="section-label">Why 정율</div>
-    <h2 class="section-title">왜 <span style="color:var(--orange)">정율사관학원</span>인가</h2>
-    <p class="section-desc" style="max-width:600px;margin:0 auto 28px;">20년 전통, SBS 방송 소개 학원.<br>부천·인천 유일 고교학점제 과학 전문 학원.<br><strong style="color:var(--orange)">감이 아닌 데이터와 시스템으로 가르칩니다.</strong></p>
-  </div>
-  <div class="video-wrap reveal">
-    <iframe src="https://www.youtube.com/embed/0uSlUBYiyA4?si=3RD_pya0Tef0K5_c" title="정율사관학원 SBS 방송" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:16px;margin-top:40px;max-width:800px;margin-left:auto;margin-right:auto;">
-    <div class="strength-item reveal">
-      <div style="font-size:32px;flex-shrink:0;">🏫</div>
-      <div><strong style="font-size:17px;display:block;margin-bottom:4px;">20년 전통</strong><span style="font-size:14px;color:var(--gray);line-height:1.6;">부천·인천 지역에서 20년간<br>학생들의 대입을 함께한 학원</span></div>
-    </div>
-    <div class="strength-item reveal">
-      <div style="font-size:32px;flex-shrink:0;">🔬</div>
-      <div><strong style="font-size:17px;display:block;margin-bottom:4px;">과학 세특 전문</strong><span style="font-size:14px;color:var(--gray);line-height:1.6;">부천·인천 유일 고교학점제<br>과학 전문 프로그램 운영</span></div>
-    </div>
-    <div class="strength-item reveal">
-      <div style="font-size:32px;flex-shrink:0;">🤖</div>
-      <div><strong style="font-size:17px;display:block;margin-bottom:4px;">AI 스마트 교실</strong><span style="font-size:14px;color:var(--gray);line-height:1.6;">풀이 시간·오답 패턴을 AI가 분석<br>1:1 맞춤 피드백 제공</span></div>
-    </div>
-    <div class="strength-item reveal">
-      <div style="font-size:32px;flex-shrink:0;">📱</div>
-      <div><strong style="font-size:17px;display:block;margin-bottom:4px;">실시간 양방향 수업</strong><span style="font-size:14px;color:var(--gray);line-height:1.6;">학생 필기를 실시간 모니터링<br>소외되는 학생 없이 케어</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHAT IS 세특 -->
-<section style="background:var(--deep);padding:72px 24px;text-align:center;">
-  <div style="max-width:800px;margin:0 auto;">
-    <div class="reveal">
-      <div class="section-label">What is 세특?</div>
-      <h2 class="section-title">세특이 뭔데<br><span style="color:var(--orange)">그렇게 중요한가요?</span></h2>
-    </div>
-
-    <div class="reveal" style="background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 28px;margin-bottom:16px;">
-      <span style="display:inline-block;background:rgba(255,255,255,0.06);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;color:var(--gray);letter-spacing:0.05em;margin-bottom:16px;">생기부</span>
-      <h3 style="font-size:clamp(20px,3.5vw,26px);font-weight:800;margin-bottom:12px;">학교생활기록부</h3>
-      <p style="font-size:15px;color:var(--gray);line-height:1.8;">학생의 고교 3년간 교과 성적, 활동, 특기사항을 기록하는 공적 문서.<br><strong>대학 입시의 핵심 평가 자료입니다.</strong></p>
-    </div>
-
-    <div class="reveal" style="text-align:center;padding:16px 0;color:var(--orange);font-size:24px;">↓</div>
-
-    <div class="reveal" style="background:linear-gradient(135deg,rgba(74,144,217,0.08),var(--card));border:1px solid rgba(74,144,217,0.2);border-radius:16px;padding:32px 28px;margin-bottom:24px;">
-      <span style="display:inline-block;background:rgba(74,144,217,0.15);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:0.05em;margin-bottom:16px;">세특</span>
-      <h3 style="font-size:clamp(20px,3.5vw,26px);font-weight:800;margin-bottom:12px;">세부능력 및 특기사항</h3>
-      <p style="font-size:15px;color:var(--gray);line-height:1.8;">생기부 안에서 <strong>가장 중요한 항목.</strong><br>교과 수업에서 학생이 보여준 탐구 활동, 발표, 프로젝트 등을 기록합니다.<br><br><strong>입학사정관이 가장 주목하는 영역</strong>이며,<br>"이 학생이 어떤 역량을 가졌는가"를 판단하는 근거가 됩니다.</p>
-    </div>
-
-    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(255,107,53,0.06),rgba(255,107,53,0.02));border:1px solid rgba(255,107,53,0.15);border-radius:16px;padding:24px;">
-      <div style="font-size:28px;">💡</div>
-      <div style="font-size:15px;color:var(--gray);line-height:1.8;text-align:center;">
-        <strong style="color:#FF6B35;">문제는 시기입니다.</strong><br>
-        세특은 고1 첫 학기부터 기록됩니다.<br>
-        "나중에 하면 되지"라고 생각하면, 이미 늦습니다.<br>
-        <strong style="color:#FF6B35;">입학 전에 전략을 세워야 합니다.</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- 고교학점제 -->
-<section style="background:var(--navy);padding:72px 24px;text-align:center;">
-  <div style="max-width:800px;margin:0 auto;">
-    <div class="reveal">
-      <div class="section-label">고교학점제</div>
-      <h2 class="section-title">고교학점제,<br><span style="color:var(--orange)">왜 알아야 하나요?</span></h2>
-      <p style="font-size:clamp(15px,2.6vw,18px);color:var(--gray);line-height:1.9;margin-bottom:48px;">2025년부터 전면 시행되는 고교학점제.<br><strong>과목 선택이 곧 입시 전략</strong>이 됩니다.<br><br>어떤 과목을 선택하느냐에 따라<br>생기부의 내용이 달라지고, <strong>대학이 달라집니다.</strong></p>
-    </div>
-
-    <div class="reveal" style="display:flex;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,0.06);margin-bottom:32px;">
-      <div style="flex:1;padding:28px 24px;">
-        <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.05em;margin-bottom:16px;background:rgba(255,255,255,0.06);color:var(--gray);">기존 방식</span>
-        <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">모든 학생이 같은 과목 수강</p>
-        <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">선택의 여지 없음</p>
-        <p style="font-size:15px;color:var(--gray);margin-top:12px;font-weight:600;">✕ &nbsp;차별화 불가</p>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--orange);padding:0 12px;background:rgba(74,144,217,0.08);">VS</div>
-      <div style="flex:1;padding:28px 24px;background:rgba(74,144,217,0.05);">
-        <span style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.05em;margin-bottom:16px;background:rgba(74,144,217,0.15);color:var(--orange);">고교학점제</span>
-        <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">학생이 과목을 직접 선택</p>
-        <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">진로에 맞는 전략적 수강</p>
-        <p style="font-size:15px;color:var(--orange);margin-top:12px;font-weight:600;">✓ &nbsp;맞춤형 생기부 설계 가능</p>
-      </div>
-    </div>
-
-    <div class="reveal" style="text-align:center;padding:32px;background:linear-gradient(135deg,rgba(74,144,217,0.08),rgba(74,144,217,0.02));border:1px solid rgba(255,255,255,0.06);border-radius:16px;">
-      <p style="font-size:clamp(18px,3.5vw,24px);font-weight:800;line-height:1.5;margin-bottom:8px;">"무엇을 선택하느냐가<br>3년 후 합격의 차이를 만듭니다."</p>
-      <span style="font-size:14px;color:var(--gray);">설명회에서 과목 선택 전략을 안내합니다.</span>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- DIFFERENTIATOR SECTION -->
-<section class="diff-section">
-  <div class="reveal">
-    <div class="section-label">Why Jeongryul</div>
-    <h2 class="section-title">부천·인천에서<br><span style="color:var(--orange)">오직 여기만</span><br>할 수 있는 것</h2>
-  </div>
-  <div class="diff-cards">
-    <div class="diff-card reveal">
-      <div class="diff-card-num">01</div>
-      <span class="diff-icon">🔬</span>
-      <div class="diff-card-title">과학고 출신 팀장이 이끄는 정율과학팀</div>
-      <div class="diff-card-sub">부천·인천 유일 — 과학고 출신 전문가 직강</div>
-      <div class="diff-card-desc">지필고사 대비는 기본, <strong>세특 관리부터 탐구 방향 설계까지</strong> 전 과정을 책임집니다. 단순 문제풀이를 넘어 입시 전략 자체를 바꿉니다.</div>
-    </div>
-    <div class="diff-card reveal">
-      <div class="diff-card-num">02</div>
-      <span class="diff-icon">🗄️</span>
-      <div class="diff-card-title">자체 문제은행 × 데이터센터</div>
-      <div class="diff-card-sub">학교별·학생별 100% 맞춤 교재 제작</div>
-      <div class="diff-card-desc">학생이 학교 수업 내용을 알려주면, <strong>그 학교 그 수업에 맞는 문제와 과제물</strong>을 직접 제작합니다. 시중 교재는 쓰지 않습니다.</div>
-    </div>
-    <div class="diff-card reveal">
-      <div class="diff-card-num">03</div>
-      <span class="diff-icon">📝</span>
-      <div class="diff-card-title">세특 생기부 완전 관리 시스템</div>
-      <div class="diff-card-sub">20년 노하우 × 고교학점제 전문</div>
-      <div class="diff-card-desc">과학 선생님이 <strong>본인의 실제 생활기록부를 직접 공개</strong>하며 좋은 세특을 얻는 전략을 알려드립니다. 이건 다른 학원에서 볼 수 없습니다.</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- TEAM SECTION -->
-<section class="team-section">
-  <div class="reveal">
-    <div class="section-label">Our Team</div>
-    <h2 class="section-title">정율과학팀을<br>소개합니다</h2>
-    <p class="section-desc">세특과 지필, 두 마리 토끼를 모두 잡는<br><strong>전국 최고 수준의 과학 전문가 팀</strong>입니다.</p>
-  </div>
-  <div class="team-grid reveal">
-    <div class="team-card leader">
-      <div class="team-avatar"><img src="Ji.JPG" alt="지성현"></div>
-      <div class="team-badge">과학팀장 · 과학고 출신</div>
-      <div class="team-name">지성현 선생님</div>
-      <div class="team-spec">과학고 출신 · 세특 전략 총괄<br>생기부 설계 전문가</div>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar"><img src="park.png" alt="박주연"></div>
-      <div class="team-badge">화학·생명과학</div>
-      <div class="team-name">박주연 선생님</div>
-      <div class="team-spec">세특 작성 전략<br>탐구주제 설계</div>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar"><img src="oh.jpeg" alt="오동현"></div>
-      <div class="team-badge">지구과학·물리</div>
-      <div class="team-name">오동현 선생님</div>
-      <div class="team-spec">학교별 내신 대비<br>맞춤형 문제 제작</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- BENEFIT -->
-<section class="benefit-section">
-  <div class="reveal">
-    <div class="section-label">Benefit</div>
-    <h2 class="section-title" style="text-align:center">설명회 참석자<br><span style="color:var(--orange)">전원 단독 혜택</span></h2>
-    <p class="section-desc" style="text-align:center;margin:0 auto 8px;">설명회 직후, 우리 아이의 첫 1년 학생부 로드맵이 완성됩니다.<br><strong>핵심 자료집을 현장에서 제공합니다.</strong></p>
-  </div>
-  <div class="benefit-cards">
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">📋</div>
-      <div class="benefit-text">
-        <h4>탐구보고서 작성 가이드와 팁</h4>
-        <p>실제 탐구보고서 작성 시 도움이 될 양식과 작성법 가이드를 풀세트로 제공합니다.</p>
-      </div>
-    </div>
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">📅</div>
-      <div class="benefit-text">
-        <h4>고교학점제 학교 생활 지침서</h4>
-        <p>고등학교 1학년부터 시기별로 반드시 체크해야할 시기별 로드맵이 담긴 학교 생활 지침서를 받아가세요.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="reveal">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">자주 묻는 질문</h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>학부모도 함께 참석할 수 있나요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>네, <strong>학부모님도 함께 참석하실 수 있습니다.</strong> 신청 시 학부모 참석 인원을 선택해 주세요.</p></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>참가비가 있나요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p><strong>완전 무료</strong>입니다. 부담 없이 참가해 주세요.</p></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>어떤 내용을 들을 수 있나요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a">
-        <p>총 3부로 구성된 <strong>약 100분</strong>의 프로그램입니다.</p>
-        <ul>
-          <li><strong>1부</strong> — 고교학점제 내신 변화, 수능 개편안 속 통합과학의 파급력</li>
-          <li><strong>2부</strong> — 부천 관내 고교 실제 생기부 해부, 수행평가를 활용한 생기부 기록법</li>
-          <li><strong>3부</strong> — 고교학점 플래너 작성법, 마이크로 피드백, 자체 문제은행 시스템</li>
-        </ul>
-      </div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>정율사관학원 학생이 아니어도 참가 가능한가요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>네, <strong>누구나 참가 가능합니다.</strong> 정율사관학원 재원생이 아니어도 신청하실 수 있습니다.</p></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>설명회는 얼마나 진행되나요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>약 <strong>90~120분</strong> 진행됩니다. 전문가 발표 후 <strong>라운드테이블 Q&amp;A</strong> 시간이 있습니다.</p></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>주차가 가능한가요?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p><strong>학원 건물 내 주차장</strong>을 이용하실 수 있습니다. 상세 위치는 <strong>신청 완료 후 안내</strong>드립니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FORM -->
-<section class="form-section" id="register-form">
-  <div class="form-container reveal">
-    <div class="form-header">
-      <h2>고1 대상 학교 생활 가이드 설명회 신청</h2>
-      <p>좌석이 한정되어 있어 조기 마감될 수 있습니다.</p>
-    </div>
-    <div class="form-body">
-      <!-- Success State -->
-      <div class="form-success" id="form-success">
-        <div class="form-success-icon">✅</div>
-        <h3>신청이 완료되었습니다!</h3>
-        <p>입력해주신 연락처로 설명회 안내 문자를 발송해 드릴 예정입니다.<br>설명회 당일 뵙겠습니다. 감사합니다.</p>
-        <a onclick="resetForm()">새로운 신청하기</a>
-      </div>
-      <!-- Form -->
-      <form id="register" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>학생 이름 *</label>
-            <input type="text" name="studentName" required placeholder="홍학생">
-          </div>
-          <div class="form-group">
-            <label>연락처 (휴대폰) *</label>
-            <input type="tel" name="phone" required placeholder="010-0000-0000">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>학부모 참석 인원 *</label>
-            <select name="parentCount">
-              <option value="0명">0명 (학생만 참석)</option>
-              <option value="1명" selected>1명</option>
-              <option value="2명">2명</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>학생 참석 여부 *</label>
-            <div class="radio-group">
-              <label class="radio-label"><input type="radio" name="studentAttending" value="참석" checked> 참석</label>
-              <label class="radio-label"><input type="radio" name="studentAttending" value="불참"> 불참</label>
+        <div class="countdown-wrap">
+            <div class="countdown-label">설명회까지 남은 시간</div>
+            <div class="countdown">
+                <div class="cd-box"><span class="cd-num" id="cd-d">00</span>
+                    <div class="cd-unit">일</div>
+                </div>
+                <div class="cd-box"><span class="cd-num" id="cd-h">00</span>
+                    <div class="cd-unit">시간</div>
+                </div>
+                <div class="cd-box"><span class="cd-num" id="cd-m">00</span>
+                    <div class="cd-unit">분</div>
+                </div>
+                <div class="cd-box"><span class="cd-num" id="cd-s">00</span>
+                    <div class="cd-unit">초</div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>고등학교 *</label>
-            <input type="text" name="school" required placeholder="예: 소명여고">
-          </div>
-          <div class="form-group">
-            <label>재원생 여부 *</label>
-            <div class="radio-group">
-              <label class="radio-label"><input type="radio" name="isEnrolled" value="재원생"> 재원생</label>
-              <label class="radio-label"><input type="radio" name="isEnrolled" value="비재원생(신규)" checked> 비재원생(신규)</label>
+
+        <div class="hero-date-badge">
+            <span class="date-main">📅 3월 2일 (월) 오후 4시</span>
+            <span class="date-sub">정율사관학원 대강당 · 무료 입장</span>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROGRAM: 3 PARTS -->
+    <section class="program-section">
+        <div class="reveal">
+            <div class="section-label" style="text-align:center">Program</div>
+            <h2 class="section-title" style="text-align:center">설명회 <span style="color:var(--orange)">핵심 프로그램</span>
+            </h2>
+            <p class="section-desc" style="text-align:center;margin:0 auto;">단순한 정보 전달이 아닌, <strong>당장 써먹을 수 있는
+                    '디테일'</strong>을 해부합니다.</p>
+        </div>
+        <div class="program-cards">
+            <!-- Part 1 -->
+            <div class="program-card reveal">
+                <div class="program-card-accent blue"></div>
+                <div class="program-card-num">01</div>
+                <div class="program-card-part">1부 (약 25분)</div>
+                <div class="program-card-title">고교 입시의 판도 변화와 과학의 무게</div>
+                <ul class="program-card-items">
+                    <li>고교학점제에서의 내신이란?</li>
+                    <li>고등학생들의 희망 진로는?</li>
+                    <li>수능 개편안 속 통합과학의 파급력</li>
+                </ul>
+                <div class="program-card-speaker">
+                    <div class="speaker-avatar">지성현</div>
+                    <div class="speaker-info">정율사관 과학과 팀장</div>
+                </div>
             </div>
-          </div>
+            <!-- Part 2 -->
+            <div class="program-card reveal">
+                <div class="program-card-accent orange"></div>
+                <div class="program-card-num">02</div>
+                <div class="program-card-part">2부 (약 45분)</div>
+                <div class="program-card-title">실제 사례로 보는 '합격하는 생기부'의 비밀</div>
+                <ul class="program-card-items">
+                    <li>부천 관내 고교 실제 생기부 해부</li>
+                    <li>성공하는 고등학교 생활 가이드</li>
+                    <li>수행평가를 활용한 생기부 기록의 4요소</li>
+                </ul>
+                <div class="program-card-speaker">
+                    <div class="speaker-avatar">박주연</div>
+                    <div class="speaker-info">정율사관 과학과 전문강사</div>
+                </div>
+            </div>
+            <!-- Part 3 -->
+            <div class="program-card reveal">
+                <div class="program-card-accent purple"></div>
+                <div class="program-card-num">03</div>
+                <div class="program-card-part">3부 (약 30분)</div>
+                <div class="program-card-title">1등급을 만드는 정율사관만의 '관리 시스템'</div>
+                <ul class="program-card-items">
+                    <li>학습 루틴을 잡는 '고교학점 플래너' 작성법</li>
+                    <li>취약점을 완벽 교정하는 '마이크로 피드백'</li>
+                    <li>부천 지역 맞춤형 자체 문제은행 시스템</li>
+                </ul>
+                <div class="program-card-speaker">
+                    <div class="speaker-avatar">오동현</div>
+                    <div class="speaker-info">정율사관 과학과 전문강사</div>
+                </div>
+            </div>
         </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="agree" name="agree">
-          <span onclick="document.getElementById('agree').click()">(필수) 개인정보 수집 및 이용에 동의합니다. 수집된 정보는 설명회 안내 및 학원 프로그램 정보 제공 목적으로만 활용되며, 관련 법령에 따라 안전하게 보관 및 폐기됩니다.</span>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PORTFOLIO: 실제 생기부 사례 -->
+    <section class="portfolio-section">
+        <div class="reveal">
+            <div class="section-label">Real Records</div>
+            <h2 class="section-title">이 생기부,<br><span style="color:var(--orange)">실제로 대학을 바꿨습니다</span></h2>
+            <p class="section-desc" style="margin:0 auto">설명회에서 공개되는 <strong>실제 합격생의 생활기록부</strong>입니다.<br>세특 한 줄이 어떻게
+                합불을 가르는지, 직접 확인하세요.</p>
         </div>
-        <button type="submit" class="form-submit" id="submit-btn">설명회 참석 신청하기</button>
-      </form>
-    </div>
-  </div>
-</section>
+        <div class="portfolio-grid">
+            <div class="portfolio-card reveal">
+                <img src="스크린샷 2026-02-27 오후 10.20.10.png" alt="과학탐구실험 세특 기록 실제 사례" class="portfolio-card-img">
+                <div class="portfolio-card-body">
+                    <span class="portfolio-card-tag">과학탐구실험 · 세특</span>
+                    <div class="portfolio-card-title">생태계와 도시화 연구 탐구 기록</div>
+                    <div class="portfolio-card-desc">실제 학생의 과학탐구실험 세특 기록입니다. 이런 수준의 탐구 설계와 기록이 상위권 대학 합격의 열쇠입니다.</div>
+                </div>
+            </div>
+            <div class="portfolio-card reveal">
+                <img src="스크린샷 2026-02-27 오후 10.20.31.png" alt="동아리활동 기록 실제 사례" class="portfolio-card-img">
+                <div class="portfolio-card-body">
+                    <span class="portfolio-card-tag">동아리활동 · 생기부</span>
+                    <div class="portfolio-card-title">머신러닝 활용 수학 탐구 활동</div>
+                    <div class="portfolio-card-desc">미적분 개념을 머신러닝에 접목한 동아리 활동 기록입니다. 교과 연계 심화 탐구의 모범 사례입니다.</div>
+                </div>
+            </div>
+        </div>
+        <p class="portfolio-note reveal">* 개인정보 보호를 위해 일부 내용이 블러 처리되었습니다.</p>
+    </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-logo">정율사관학원</div>
-  <div class="footer-info">
-    고교학점제 전문 · 20년 전통<br>
-    📍 경기도 부천시 길주로 91, 6층 정율사관학원<br>
-    📞 상담문의: 032-321-9937
-  </div>
-</footer>
+    <div class="divider"></div>
 
-<script>
-  // COUNTDOWN TIMER - March 2, 2026 4:00 PM KST
-  function updateCountdown() {
-    const target = new Date('2026-03-02T16:00:00+09:00');
-    const now = new Date();
-    const diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('cd-d').textContent = '00';
-      document.getElementById('cd-h').textContent = '00';
-      document.getElementById('cd-m').textContent = '00';
-      document.getElementById('cd-s').textContent = '00';
-      return;
-    }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+    <!-- CRISIS: WHY NOW -->
+    <section class="crisis-section">
+        <div class="reveal">
+            <div class="section-label">Why Now?</div>
+            <h2 class="section-title">고1 첫 학기,<br><span style="color:var(--orange)">생기부가 시작됩니다.</span></h2>
+        </div>
+        <div class="crisis-body reveal">
+            고등학교 입학과 동시에 <strong>생활기록부(생기부)</strong>가 작성됩니다.<br>
+            세부능력 및 특기사항(세특)은 <strong>대입에서 가장 중요한 평가 요소</strong>입니다.<br><br>
+            하지만 대부분의 예비 고1 학생과 학부모님은<br>
+            <span class="accent-text">"세특이 뭔지", "어떻게 관리하는지"</span> 모른 채 입학합니다.
+        </div>
+        <div class="crisis-cards">
+            <div class="crisis-card reveal">
+                <div class="crisis-card-icon">⚠️</div>
+                <div class="crisis-card-number">73%</div>
+                <div class="crisis-card-desc">예비 고1 학생 중<br><strong>세특이 무엇인지 모르는 비율</strong></div>
+            </div>
+            <div class="crisis-card reveal">
+                <div class="crisis-card-icon">📉</div>
+                <div class="crisis-card-number">1학기</div>
+                <div class="crisis-card-desc">고1 첫 학기 세특을 놓치면<br><strong>3년간 만회가 어렵습니다</strong></div>
+            </div>
+            <div class="crisis-card reveal">
+                <div class="crisis-card-icon">🎯</div>
+                <div class="crisis-card-number">수시<br>72%</div>
+                <div class="crisis-card-desc">대학 입시의 72%가 수시전형<br><strong>생기부가 곧 합격의 열쇠</strong></div>
+            </div>
+        </div>
+        <div class="crisis-conclusion reveal"
+            style="margin-top:36px;max-width:900px;margin-left:auto;margin-right:auto;padding:32px;background:linear-gradient(135deg,rgba(74,144,217,0.06),rgba(74,144,217,0.02));border:1px solid rgba(255,255,255,0.06);border-radius:16px;text-align:center;">
+            <p style="font-size:clamp(18px,3.5vw,24px);font-weight:800;line-height:1.6;">"모르면 뒤처집니다.<br>알면 전략이 됩니다."</p>
+        </div>
+    </section>
 
-  // SCROLL REVEAL
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
+    <div class="divider"></div>
 
-  // FORM SUBMIT
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = document.getElementById('register');
-    const agree = document.getElementById('agree');
-    const btn = document.getElementById('submit-btn');
+    <!-- HOOK: WHY NOW -->
+    <section class="hook-section">
+        <div class="reveal">
+            <div class="section-label">Reality Check</div>
+            <h2 class="section-title">같은 성적,<br><span style="color:var(--orange)">다른 대학</span>의 비밀</h2>
+            <p class="section-desc">입학사정관은 성적표만 보지 않습니다.<br><strong>세특 3줄</strong>이 당락을 바꿉니다.</p>
+        </div>
+        <div class="hook-cards">
+            <div class="hook-card reveal">
+                <span class="hook-card-icon">🎯</span>
+                <div class="hook-card-title">세특은 고1 1학기부터 시작된다</div>
+                <div class="hook-card-desc">대부분의 학생이 고3이 되어서야 세특을 알게 됩니다. 하지만 입학사정관은 <strong>고1 세특부터 꼼꼼히 봅니다.</strong>
+                    늦게 시작하면 절대 따라잡을 수 없어요.</div>
+            </div>
+            <div class="hook-card reveal">
+                <span class="hook-card-icon">📋</span>
+                <div class="hook-card-title">내 기록이 진짜 기록되도록 해야 한다</div>
+                <div class="hook-card-desc">단순한 제출만으로는 제대로 된 기록이 만들어지지 않습니다. <strong>깊이 있는 세특이 적히는 법</strong>을 알아야 합니다.</div>
+            </div>
+            <div class="hook-card reveal">
+                <span class="hook-card-icon">🏫</span>
+                <div class="hook-card-title">느긋하게 준비하다간 늦는다</div>
+                <div class="hook-card-desc">학기 초는 특히 여러 활동들로 정신없습니다. <strong>미리 준비하지 않으면 늦습니다.</strong></div>
+            </div>
+        </div>
+    </section>
 
-    if (!agree.checked) {
-      alert('개인정보 수집 및 이용에 동의해주세요.');
-      return;
-    }
+    <div class="divider"></div>
 
-    const formData = {
-      studentName: form.studentName.value,
-      phone: form.phone.value,
-      parentCount: form.parentCount.value,
-      studentAttending: form.querySelector('input[name="studentAttending"]:checked').value,
-      school: form.school.value,
-      isEnrolled: form.querySelector('input[name="isEnrolled"]:checked').value,
-      agree: true
-    };
+    <!-- SBS VIDEO SECTION -->
+    <section class="video-section">
+        <div class="reveal">
+            <div class="section-label">Why 정율</div>
+            <h2 class="section-title">왜 <span style="color:var(--orange)">정율사관학원</span>인가</h2>
+            <p class="section-desc" style="max-width:600px;margin:0 auto 28px;">20년 전통, SBS 방송 소개 학원.<br>부천·인천 유일 고교학점제
+                과학 전문 학원.<br><strong style="color:var(--orange)">감이 아닌 데이터와 시스템으로 가르칩니다.</strong></p>
+        </div>
+        <div class="video-wrap reveal">
+            <iframe src="https://www.youtube.com/embed/0uSlUBYiyA4?si=3RD_pya0Tef0K5_c" title="정율사관학원 SBS 방송"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div
+            style="display:flex;flex-direction:column;gap:16px;margin-top:40px;max-width:800px;margin-left:auto;margin-right:auto;">
+            <div class="strength-item reveal">
+                <div style="font-size:32px;flex-shrink:0;">🏫</div>
+                <div><strong style="font-size:17px;display:block;margin-bottom:4px;">20년 전통</strong><span
+                        style="font-size:14px;color:var(--gray);line-height:1.6;">부천·인천 지역에서 20년간<br>학생들의 대입을 함께한
+                        학원</span></div>
+            </div>
+            <div class="strength-item reveal">
+                <div style="font-size:32px;flex-shrink:0;">🔬</div>
+                <div><strong style="font-size:17px;display:block;margin-bottom:4px;">과학 세특 전문</strong><span
+                        style="font-size:14px;color:var(--gray);line-height:1.6;">부천·인천 유일 고교학점제<br>과학 전문 프로그램 운영</span>
+                </div>
+            </div>
+            <div class="strength-item reveal">
+                <div style="font-size:32px;flex-shrink:0;">🤖</div>
+                <div><strong style="font-size:17px;display:block;margin-bottom:4px;">AI 스마트 교실</strong><span
+                        style="font-size:14px;color:var(--gray);line-height:1.6;">풀이 시간·오답 패턴을 AI가 분석<br>1:1 맞춤 피드백
+                        제공</span></div>
+            </div>
+            <div class="strength-item reveal">
+                <div style="font-size:32px;flex-shrink:0;">📱</div>
+                <div><strong style="font-size:17px;display:block;margin-bottom:4px;">실시간 양방향 수업</strong><span
+                        style="font-size:14px;color:var(--gray);line-height:1.6;">학생 필기를 실시간 모니터링<br>소외되는 학생 없이
+                        케어</span></div>
+            </div>
+        </div>
+    </section>
 
-    btn.disabled = true;
-    btn.textContent = '신청 접수 중...';
+    <div class="divider"></div>
 
-    fetch('https://script.google.com/macros/s/AKfycby6Z3REPlFVMfemXeC_NT7sRGs0XqFQpgbhO5MlIoPMy7LWRaKwpkhymdBhMcoz4-1j/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.result === 'success') {
-        form.style.display = 'none';
-        document.getElementById('form-success').classList.add('active');
-        form.reset();
-      } else {
-        throw new Error(data.error);
-      }
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-      alert('[저장 실패] 구글 서버 오류입니다: ' + error.message);
-    })
-    .finally(() => {
-      btn.disabled = false;
-      btn.textContent = '설명회 참석 신청하기';
-    });
-  }
+    <!-- WHAT IS 세특 -->
+    <section style="background:var(--deep);padding:72px 24px;text-align:center;">
+        <div style="max-width:800px;margin:0 auto;">
+            <div class="reveal">
+                <div class="section-label">What is 세특?</div>
+                <h2 class="section-title">세특이 뭔데<br><span style="color:var(--orange)">그렇게 중요한가요?</span></h2>
+            </div>
 
-  function resetForm() {
-    document.getElementById('register').style.display = '';
-    document.getElementById('form-success').classList.remove('active');
-  }
-</script>
+            <div class="reveal"
+                style="background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 28px;margin-bottom:16px;">
+                <span
+                    style="display:inline-block;background:rgba(255,255,255,0.06);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;color:var(--gray);letter-spacing:0.05em;margin-bottom:16px;">생기부</span>
+                <h3 style="font-size:clamp(20px,3.5vw,26px);font-weight:800;margin-bottom:12px;">학교생활기록부</h3>
+                <p style="font-size:15px;color:var(--gray);line-height:1.8;">학생의 고교 3년간 교과 성적, 활동, 특기사항을 기록하는 공적
+                    문서.<br><strong>대학 입시의 핵심 평가 자료입니다.</strong></p>
+            </div>
+
+            <div class="reveal" style="text-align:center;padding:16px 0;color:var(--orange);font-size:24px;">↓</div>
+
+            <div class="reveal"
+                style="background:linear-gradient(135deg,rgba(74,144,217,0.08),var(--card));border:1px solid rgba(74,144,217,0.2);border-radius:16px;padding:32px 28px;margin-bottom:24px;">
+                <span
+                    style="display:inline-block;background:rgba(74,144,217,0.15);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:0.05em;margin-bottom:16px;">세특</span>
+                <h3 style="font-size:clamp(20px,3.5vw,26px);font-weight:800;margin-bottom:12px;">세부능력 및 특기사항</h3>
+                <p style="font-size:15px;color:var(--gray);line-height:1.8;">생기부 안에서 <strong>가장 중요한 항목.</strong><br>교과
+                    수업에서 학생이 보여준 탐구 활동, 발표, 프로젝트 등을 기록합니다.<br><br><strong>입학사정관이 가장 주목하는 영역</strong>이며,<br>"이 학생이 어떤 역량을
+                    가졌는가"를 판단하는 근거가 됩니다.</p>
+            </div>
+
+            <div class="reveal"
+                style="display:flex;flex-direction:column;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(255,107,53,0.06),rgba(255,107,53,0.02));border:1px solid rgba(255,107,53,0.15);border-radius:16px;padding:24px;">
+                <div style="font-size:28px;">💡</div>
+                <div style="font-size:15px;color:var(--gray);line-height:1.8;text-align:center;">
+                    <strong style="color:#FF6B35;">문제는 시기입니다.</strong><br>
+                    세특은 고1 첫 학기부터 기록됩니다.<br>
+                    "나중에 하면 되지"라고 생각하면, 이미 늦습니다.<br>
+                    <strong style="color:#FF6B35;">입학 전에 전략을 세워야 합니다.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 고교학점제 -->
+    <section style="background:var(--navy);padding:72px 24px;text-align:center;">
+        <div style="max-width:800px;margin:0 auto;">
+            <div class="reveal">
+                <div class="section-label">고교학점제</div>
+                <h2 class="section-title">고교학점제,<br><span style="color:var(--orange)">왜 알아야 하나요?</span></h2>
+                <p style="font-size:clamp(15px,2.6vw,18px);color:var(--gray);line-height:1.9;margin-bottom:48px;">
+                    2025년부터 전면 시행되는 고교학점제.<br><strong>과목 선택이 곧 입시 전략</strong>이 됩니다.<br><br>어떤 과목을 선택하느냐에 따라<br>생기부의 내용이
+                    달라지고, <strong>대학이 달라집니다.</strong></p>
+            </div>
+
+            <div class="reveal"
+                style="display:flex;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid rgba(255,255,255,0.06);margin-bottom:32px;">
+                <div style="flex:1;padding:28px 24px;">
+                    <span
+                        style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.05em;margin-bottom:16px;background:rgba(255,255,255,0.06);color:var(--gray);">기존
+                        방식</span>
+                    <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">모든 학생이 같은 과목 수강</p>
+                    <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">선택의 여지 없음</p>
+                    <p style="font-size:15px;color:var(--gray);margin-top:12px;font-weight:600;">✕ &nbsp;차별화 불가</p>
+                </div>
+                <div
+                    style="display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--orange);padding:0 12px;background:rgba(74,144,217,0.08);">
+                    VS</div>
+                <div style="flex:1;padding:28px 24px;background:rgba(74,144,217,0.05);">
+                    <span
+                        style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.05em;margin-bottom:16px;background:rgba(74,144,217,0.15);color:var(--orange);">고교학점제</span>
+                    <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">학생이 과목을 직접 선택</p>
+                    <p style="font-size:15px;color:var(--gray);padding:4px 0;line-height:1.5;">진로에 맞는 전략적 수강</p>
+                    <p style="font-size:15px;color:var(--orange);margin-top:12px;font-weight:600;">✓ &nbsp;맞춤형 생기부 설계 가능
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal"
+                style="text-align:center;padding:32px;background:linear-gradient(135deg,rgba(74,144,217,0.08),rgba(74,144,217,0.02));border:1px solid rgba(255,255,255,0.06);border-radius:16px;">
+                <p style="font-size:clamp(18px,3.5vw,24px);font-weight:800;line-height:1.5;margin-bottom:8px;">"무엇을
+                    선택하느냐가<br>3년 후 합격의 차이를 만듭니다."</p>
+                <span style="font-size:14px;color:var(--gray);">설명회에서 과목 선택 전략을 안내합니다.</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DIFFERENTIATOR SECTION -->
+    <section class="diff-section">
+        <div class="reveal">
+            <div class="section-label">Why Jeongryul</div>
+            <h2 class="section-title">부천·인천에서<br><span style="color:var(--orange)">오직 여기만</span><br>할 수 있는 것</h2>
+        </div>
+        <div class="diff-cards">
+            <div class="diff-card reveal">
+                <div class="diff-card-num">01</div>
+                <span class="diff-icon">🔬</span>
+                <div class="diff-card-title">과학고 출신 팀장이 이끄는 정율과학팀</div>
+                <div class="diff-card-sub">부천·인천 유일 — 과학고 출신 전문가 직강</div>
+                <div class="diff-card-desc">지필고사 대비는 기본, <strong>세특 관리부터 탐구 방향 설계까지</strong> 전 과정을 책임집니다. 단순 문제풀이를 넘어 입시
+                    전략 자체를 바꿉니다.</div>
+            </div>
+            <div class="diff-card reveal">
+                <div class="diff-card-num">02</div>
+                <span class="diff-icon">🗄️</span>
+                <div class="diff-card-title">자체 문제은행 × 데이터센터</div>
+                <div class="diff-card-sub">학교별·학생별 100% 맞춤 교재 제작</div>
+                <div class="diff-card-desc">학생이 학교 수업 내용을 알려주면, <strong>그 학교 그 수업에 맞는 문제와 과제물</strong>을 직접 제작합니다. 시중 교재는
+                    쓰지 않습니다.</div>
+            </div>
+            <div class="diff-card reveal">
+                <div class="diff-card-num">03</div>
+                <span class="diff-icon">📝</span>
+                <div class="diff-card-title">세특 생기부 완전 관리 시스템</div>
+                <div class="diff-card-sub">20년 노하우 × 고교학점제 전문</div>
+                <div class="diff-card-desc">과학 선생님이 <strong>본인의 실제 생활기록부를 직접 공개</strong>하며 좋은 세특을 얻는 전략을 알려드립니다. 이건 다른
+                    학원에서 볼 수 없습니다.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="reveal">
+            <div class="section-label">Our Team</div>
+            <h2 class="section-title">정율과학팀을<br>소개합니다</h2>
+            <p class="section-desc">세특과 지필, 두 마리 토끼를 모두 잡는<br><strong>전국 최고 수준의 과학 전문가 팀</strong>입니다.</p>
+        </div>
+        <div class="team-grid reveal">
+            <div class="team-card leader">
+                <div class="team-avatar"><img src="Ji.JPG" alt="지성현"></div>
+                <div class="team-badge">과학팀장 · 과학고 출신</div>
+                <div class="team-name">지성현 선생님</div>
+                <div class="team-spec">과학고 출신 · 세특 전략 총괄<br>생기부 설계 전문가</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><img src="park.png" alt="박주연"></div>
+                <div class="team-badge">화학·생명과학</div>
+                <div class="team-name">박주연 선생님</div>
+                <div class="team-spec">세특 작성 전략<br>탐구주제 설계</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><img src="oh.jpeg" alt="오동현"></div>
+                <div class="team-badge">지구과학·물리</div>
+                <div class="team-name">오동현 선생님</div>
+                <div class="team-spec">학교별 내신 대비<br>맞춤형 문제 제작</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BENEFIT -->
+    <section class="benefit-section">
+        <div class="reveal">
+            <div class="section-label">Benefit</div>
+            <h2 class="section-title" style="text-align:center">설명회 참석자<br><span style="color:var(--orange)">전원 단독
+                    혜택</span></h2>
+            <p class="section-desc" style="text-align:center;margin:0 auto 8px;">설명회 직후, 우리 아이의 첫 1년 학생부 로드맵이
+                완성됩니다.<br><strong>핵심 자료집을 현장에서 제공합니다.</strong></p>
+        </div>
+        <div class="benefit-cards">
+            <div class="benefit-card reveal">
+                <div class="benefit-icon">📋</div>
+                <div class="benefit-text">
+                    <h4>탐구보고서 작성 가이드와 팁</h4>
+                    <p>실제 탐구보고서 작성 시 도움이 될 양식과 작성법 가이드를 풀세트로 제공합니다.</p>
+                </div>
+            </div>
+            <div class="benefit-card reveal">
+                <div class="benefit-icon">📅</div>
+                <div class="benefit-text">
+                    <h4>고교학점제 학교 생활 지침서</h4>
+                    <p>고등학교 1학년부터 시기별로 반드시 체크해야할 시기별 로드맵이 담긴 학교 생활 지침서를 받아가세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="reveal">
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">자주 묻는 질문</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>학부모도 함께 참석할 수
+                        있나요?</span><span class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p>네, <strong>학부모님도 함께 참석하실 수 있습니다.</strong> 신청 시 학부모 참석 인원을 선택해 주세요.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>참가비가 있나요?</span><span
+                        class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p><strong>완전 무료</strong>입니다. 부담 없이 참가해 주세요.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>어떤 내용을 들을 수
+                        있나요?</span><span class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p>총 3부로 구성된 <strong>약 100분</strong>의 프로그램입니다.</p>
+                    <ul>
+                        <li><strong>1부</strong> — 고교학점제 내신 변화, 수능 개편안 속 통합과학의 파급력</li>
+                        <li><strong>2부</strong> — 부천 관내 고교 실제 생기부 해부, 수행평가를 활용한 생기부 기록법</li>
+                        <li><strong>3부</strong> — 고교학점 플래너 작성법, 마이크로 피드백, 자체 문제은행 시스템</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>정율사관학원 학생이 아니어도 참가
+                        가능한가요?</span><span class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p>네, <strong>누구나 참가 가능합니다.</strong> 정율사관학원 재원생이 아니어도 신청하실 수 있습니다.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>설명회는 얼마나
+                        진행되나요?</span><span class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p>약 <strong>90~120분</strong> 진행됩니다. 전문가 발표 후 <strong>라운드테이블 Q&amp;A</strong> 시간이 있습니다.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>주차가 가능한가요?</span><span
+                        class="faq-icon">+</span></button>
+                <div class="faq-a">
+                    <p><strong>학원 건물 내 주차장</strong>을 이용하실 수 있습니다. 상세 위치는 <strong>신청 완료 후 안내</strong>드립니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FORM -->
+    <section class="form-section" id="register-form">
+        <div class="form-container reveal">
+            <div class="form-header">
+                <h2>고1 대상 학교 생활 가이드 설명회 신청</h2>
+                <p>좌석이 한정되어 있어 조기 마감될 수 있습니다.</p>
+            </div>
+            <div class="form-body">
+                <!-- Success State -->
+                <div class="form-success" id="form-success">
+                    <div class="form-success-icon">✅</div>
+                    <h3>신청이 완료되었습니다!</h3>
+                    <p>입력해주신 연락처로 설명회 안내 문자를 발송해 드릴 예정입니다.<br>설명회 당일 뵙겠습니다. 감사합니다.</p>
+                    <a onclick="resetForm()">새로운 신청하기</a>
+                </div>
+                <!-- Form -->
+                <form id="register" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>학생 이름 *</label>
+                            <input type="text" name="studentName" required placeholder="홍학생">
+                        </div>
+                        <div class="form-group">
+                            <label>연락처 (휴대폰) *</label>
+                            <input type="tel" name="phone" required placeholder="010-0000-0000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>학부모 참석 인원 *</label>
+                            <select name="parentCount">
+                                <option value="0명">0명 (학생만 참석)</option>
+                                <option value="1명" selected>1명</option>
+                                <option value="2명">2명</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>학생 참석 여부 *</label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="studentAttending" value="참석"
+                                        checked> 참석</label>
+                                <label class="radio-label"><input type="radio" name="studentAttending" value="불참">
+                                    불참</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>고등학교 *</label>
+                            <input type="text" name="school" required placeholder="예: 소명여고">
+                        </div>
+                        <div class="form-group">
+                            <label>재원생 여부 *</label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="isEnrolled" value="재원생">
+                                    재원생</label>
+                                <label class="radio-label"><input type="radio" name="isEnrolled" value="비재원생(신규)"
+                                        checked> 비재원생(신규)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree" name="agree">
+                        <span onclick="document.getElementById('agree').click()">(필수) 개인정보 수집 및 이용에 동의합니다. 수집된 정보는 설명회
+                            안내 및 학원 프로그램 정보 제공 목적으로만 활용되며, 관련 법령에 따라 안전하게 보관 및 폐기됩니다.</span>
+                    </div>
+                    <button type="submit" class="form-submit" id="submit-btn">설명회 참석 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">정율사관학원</div>
+        <div class="footer-info">
+            고교학점제 전문 · 20년 전통<br>
+            📍 경기도 부천시 길주로 91, 6층 정율사관학원<br>
+            📞 상담문의: 032-321-9937
+        </div>
+    </footer>
+
+    <script>
+        // COUNTDOWN TIMER - March 2, 2026 4:00 PM KST
+        function updateCountdown() {
+            const target = new Date('2026-03-02T16:00:00+09:00');
+            const now = new Date();
+            const diff = target - now;
+            if (diff <= 0) {
+                document.getElementById('cd-d').textContent = '00';
+                document.getElementById('cd-h').textContent = '00';
+                document.getElementById('cd-m').textContent = '00';
+                document.getElementById('cd-s').textContent = '00';
+                return;
+            }
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+            document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+            document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+            document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // SCROLL REVEAL
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(r => observer.observe(r));
+
+        // FORM SUBMIT
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('register');
+            const agree = document.getElementById('agree');
+            const btn = document.getElementById('submit-btn');
+
+            if (!agree.checked) {
+                alert('개인정보 수집 및 이용에 동의해주세요.');
+                return;
+            }
+
+            const formData = {
+                studentName: form.studentName.value,
+                phone: form.phone.value,
+                parentCount: form.parentCount.value,
+                studentAttending: form.querySelector('input[name="studentAttending"]:checked').value,
+                school: form.school.value,
+                isEnrolled: form.querySelector('input[name="isEnrolled"]:checked').value,
+                agree: true
+            };
+
+            btn.disabled = true;
+            btn.textContent = '신청 접수 중...';
+
+            fetch('https://script.google.com/macros/s/AKfycby6Z3REPlFVMfemXeC_NT7sRGs0XqFQpgbhO5MlIoPMy7LWRaKwpkhymdBhMcoz4-1j/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        form.style.display = 'none';
+                        document.getElementById('form-success').classList.add('active');
+                        form.reset();
+                    } else {
+                        throw new Error(data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('[저장 실패] 구글 서버 오류입니다: ' + error.message);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = '설명회 참석 신청하기';
+                });
+        }
+
+        function resetForm() {
+            document.getElementById('register').style.display = '';
+            document.getElementById('form-success').classList.remove('active');
+        }
+    </script>
 </body>
+
 </html>
