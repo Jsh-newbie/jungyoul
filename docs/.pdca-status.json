@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-02-28T18:39:31.363Z",
+  "lastUpdated": "2026-03-01T05:42:51.591Z",
   "activeFeatures": [
     "landing"
   ],
@@ -15,9 +15,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-02-28T18:39:31.363Z",
-        "lastUpdated": "2026-02-28T18:39:31.363Z"
+        "lastUpdated": "2026-03-01T05:42:51.591Z"
       },
-      "lastFile": "/Users/sunghyunji/개발/landing/export-pdf.js"
+      "lastFile": "/Users/sunghyunji/개발/landing/convert-to-pdf.js"
     }
   },
   "pipeline": {
@@ -28,11 +28,41 @@
   "session": {
     "startedAt": "2026-02-27T12:25:52.812Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-02-28T18:39:31.363Z"
+    "lastActivity": "2026-03-01T05:42:51.591Z"
   },
   "history": [
     {
       "timestamp": "2026-02-28T18:39:31.363Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-01T05:35:26.583Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-01T05:35:43.057Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-01T05:35:47.505Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-01T05:35:50.891Z",
+      "feature": "landing",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-01T05:42:51.591Z",
       "feature": "landing",
       "phase": "do",
       "action": "updated"
