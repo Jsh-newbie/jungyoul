@@ -1102,6 +1102,108 @@
             opacity: 1;
         }
 
+        .gallery-thumb {
+            max-width: 280px;
+            width: 100%;
+            margin-top: 24px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .gallery-thumb:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            display: block;
+        }
+
+        .gallery-thumb-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+        }
+
+        .gallery-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .gallery-overlay.show {
+            display: flex;
+        }
+
+        .gallery-overlay img {
+            max-width: 85vw;
+            max-height: 78vh;
+            border-radius: 12px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.5);
+            user-select: none;
+        }
+
+        .gallery-close {
+            position: fixed;
+            top: 24px; right: 32px;
+            font-size: 32px;
+            color: var(--white);
+            cursor: pointer;
+            z-index: 10000;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            background: none;
+            border: none;
+        }
+
+        .gallery-close:hover { opacity: 1; }
+
+        .gallery-nav {
+            position: fixed;
+            top: 50%; transform: translateY(-50%);
+            font-size: 36px;
+            color: var(--white);
+            cursor: pointer;
+            z-index: 10000;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            background: rgba(255,255,255,0.08);
+            border: none;
+            border-radius: 50%;
+            width: 52px; height: 52px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .gallery-nav:hover { opacity: 1; }
+        .gallery-nav.prev { left: 24px; }
+        .gallery-nav.next { right: 24px; }
+
+        .gallery-counter {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
         .fullscreen-btn {
             margin-left: 12px;
             width: 36px;
@@ -2775,10 +2877,9 @@
             <div class="slide-subtitle">
                 학생이 직접 작성하여 제출한 탐구 보고서의 실제 사례입니다
             </div>
-            <div class="placeholder-box">
-                <div class="ph-icon">📝</div>
-                <div class="ph-text">박주연 선생님 자료 반영 영역<br>실제 제출된 탐구 보고서 이미지</div>
-                <div class="ph-label">자료 대기중</div>
+            <div class="gallery-thumb" onclick="openGallery(0)">
+                <img src="./report-1.jpeg" alt="탐구 보고서 1페이지">
+                <div class="gallery-thumb-badge">1 / 5 — 클릭하여 보기</div>
             </div>
         </div>
 
@@ -3445,6 +3546,14 @@
         <img id="imgModalSrc" src="" alt="확대 이미지">
     </div>
 
+    <div class="gallery-overlay" id="galleryModal">
+        <button class="gallery-close" onclick="closeGallery()">&times;</button>
+        <button class="gallery-nav prev" onclick="galleryNav(-1)">‹</button>
+        <button class="gallery-nav next" onclick="galleryNav(1)">›</button>
+        <img id="gallerySrc" src="" alt="탐구 보고서">
+        <div class="gallery-counter" id="galleryCounter"></div>
+    </div>
+
     <!-- ===== BOTTOM NAVIGATION ===== -->
     <div class="slide-nav">
         <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← 이전</button>
@@ -3489,6 +3598,30 @@
             modalOpen = false;
         }
 
+        // Gallery modal
+        const galleryImages = ['./report-1.jpeg','./report-2.jpeg','./report-3.jpeg','./report-4.jpeg','./report-5.jpeg'];
+        let galleryIndex = 0;
+        let galleryOpen = false;
+
+        function openGallery(idx) {
+            galleryIndex = idx;
+            updateGallery();
+            document.getElementById('galleryModal').classList.add('show');
+            galleryOpen = true;
+        }
+        function closeGallery() {
+            document.getElementById('galleryModal').classList.remove('show');
+            galleryOpen = false;
+        }
+        function galleryNav(dir) {
+            galleryIndex = (galleryIndex + dir + galleryImages.length) % galleryImages.length;
+            updateGallery();
+        }
+        function updateGallery() {
+            document.getElementById('gallerySrc').src = galleryImages[galleryIndex];
+            document.getElementById('galleryCounter').textContent = (galleryIndex + 1) + ' / ' + galleryImages.length;
+        }
+
         // Fullscreen
         function toggleFullscreen() {
             if (!document.fullscreenElement) {
@@ -3503,6 +3636,15 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && galleryOpen) {
+                closeGallery();
+                return;
+            }
+            if (galleryOpen) {
+                if (e.key === 'ArrowRight') { e.preventDefault(); galleryNav(1); }
+                else if (e.key === 'ArrowLeft') { e.preventDefault(); galleryNav(-1); }
+                return;
+            }
             if (e.key === 'Escape' && modalOpen) {
                 closeModal();
                 return;
