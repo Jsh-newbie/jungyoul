@@ -1101,6 +1101,27 @@
         .img-modal-close:hover {
             opacity: 1;
         }
+
+        .fullscreen-btn {
+            margin-left: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--white);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .fullscreen-btn:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -2537,6 +2558,74 @@
         </div>
 
         <!-- ============================================ -->
+        <!-- SLIDE 10: 과학 수행평가 활용법 (박주연) -->
+        <!-- ============================================ -->
+        <div class="slide" data-part="2">
+            <div class="slide-label">실전 활용법</div>
+            <div class="slide-title">
+                수행평가 <span class="accent">100% 활용법</span>
+            </div>
+            <div class="slide-subtitle">
+                수행평가 = 추가 탐구보고서 = 과학자적 사고<br>
+                <strong>"수행평가는 나의 전공 역량을 증명할 수 있는 '공인된 무대'이다."</strong>
+            </div>
+            <div class="card-grid cols-2" style="max-width:900px;">
+                <div class="card" style="background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);">
+                    <div class="card-title" style="text-align:center;margin-bottom:16px;">기록 4요소</div>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
+                            목적 (왜?)</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
+                            과정 (무엇을?)</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
+                            결과 (어떻게?)</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
+                            성찰 (다음엔?)</div>
+                    </div>
+                </div>
+                <div class="card" style="background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);">
+                    <div class="card-title" style="text-align:center;margin-bottom:16px;">→ 과학 탐구 단계</div>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
+                            문제 인식 / 가설</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
+                            실험 설계 / 탐구 수행</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
+                            데이터 분석</div>
+                        <div
+                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
+                            결론 / 한계 / 후속 연구</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-grid cols-3" style="margin-top:16px;max-width:900px;">
+                <div class="card" style="text-align:center;padding:20px;">
+                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">공식성</div>
+                    <div class="card-desc">학교 공식 기록으로<br>남는 평가</div>
+                </div>
+                <div class="card" style="text-align:center;padding:20px;">
+                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">차별화</div>
+                    <div class="card-desc">나만의 관점으로<br>탐구 주제 설정</div>
+                </div>
+                <div class="card" style="text-align:center;padding:20px;">
+                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">확장성</div>
+                    <div class="card-desc">후속 연구로 이어지는<br>성장 스토리</div>
+                </div>
+            </div>
+            <div class="key-message">
+                <div class="key-message-label">KEY MESSAGE</div>
+                <p>과학 수업 시간에 배운 원리를 <strong>나의 관심사와 연결</strong>하고, <br>4요소 구조로 기록하면 수행평가가 곧 합격하는 생기부의 핵심 소재가 됩니다.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
         <!-- SLIDE 10-0: 수행평가 100% 활용법 - 탐구 목적 (박주연) -->
         <!-- ============================================ -->
         <div class="slide" data-part="2" style="padding:36px 60px;">
@@ -2742,74 +2831,6 @@
                 </div>
             </div>
             <div style="color:var(--gray);font-size:11px;margin-top:8px;letter-spacing:0.5px;">스크롤하여 내용을 확인하세요 ↕</div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SLIDE 10: 과학 수행평가 활용법 (박주연) -->
-        <!-- ============================================ -->
-        <div class="slide" data-part="2">
-            <div class="slide-label">실전 활용법</div>
-            <div class="slide-title">
-                수행평가 <span class="accent">100% 활용법</span>
-            </div>
-            <div class="slide-subtitle">
-                수행평가 = 추가 탐구보고서 = 과학자적 사고<br>
-                <strong>"수행평가는 나의 전공 역량을 증명할 수 있는 '공인된 무대'이다."</strong>
-            </div>
-            <div class="card-grid cols-2" style="max-width:900px;">
-                <div class="card" style="background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);">
-                    <div class="card-title" style="text-align:center;margin-bottom:16px;">기록 4요소</div>
-                    <div style="display:flex;flex-direction:column;gap:8px;">
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
-                            목적 (왜?)</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
-                            과정 (무엇을?)</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
-                            결과 (어떻게?)</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;">
-                            성찰 (다음엔?)</div>
-                    </div>
-                </div>
-                <div class="card" style="background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);">
-                    <div class="card-title" style="text-align:center;margin-bottom:16px;">→ 과학 탐구 단계</div>
-                    <div style="display:flex;flex-direction:column;gap:8px;">
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
-                            문제 인식 / 가설</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
-                            실험 설계 / 탐구 수행</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
-                            데이터 분석</div>
-                        <div
-                            style="padding:10px 14px;background:var(--card);border-radius:8px;font-size:14px;font-weight:600;color:var(--blue-light);">
-                            결론 / 한계 / 후속 연구</div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-grid cols-3" style="margin-top:16px;max-width:900px;">
-                <div class="card" style="text-align:center;padding:20px;">
-                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">공식성</div>
-                    <div class="card-desc">학교 공식 기록으로<br>남는 평가</div>
-                </div>
-                <div class="card" style="text-align:center;padding:20px;">
-                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">차별화</div>
-                    <div class="card-desc">나만의 관점으로<br>탐구 주제 설정</div>
-                </div>
-                <div class="card" style="text-align:center;padding:20px;">
-                    <div style="font-size:32px;font-weight:900;color:var(--blue);margin-bottom:6px;">확장성</div>
-                    <div class="card-desc">후속 연구로 이어지는<br>성장 스토리</div>
-                </div>
-            </div>
-            <div class="key-message">
-                <div class="key-message-label">KEY MESSAGE</div>
-                <p>과학 수업 시간에 배운 원리를 <strong>나의 관심사와 연결</strong>하고, <br>4요소 구조로 기록하면 수행평가가 곧 합격하는 생기부의 핵심 소재가 됩니다.</p>
-            </div>
         </div>
 
         <!-- ============================================ -->
@@ -3066,14 +3087,18 @@
             <div class="card-grid cols-2" style="max-width:860px;">
                 <div class="card" style="padding:32px 28px;">
                     <div class="card-icon" style="font-size:36px;margin-bottom:16px;">⚠️</div>
-                    <div class="card-title" style="font-size:22px;margin-bottom:14px;">지필 A등급의 함정</div>
+                    <div class="card-title" style="font-size:22px;margin-bottom:14px;">중학교 A등급의 함정</div>
                     <div class="card-desc" style="font-size:17px;line-height:1.8;">
-                        다들 높게 나오는 지필 평가 점수<br>
-                        <span style="color:var(--gray);">고교학점제 하에서 A등급은 거의 모두가 받음</span>
+                        중학교 때 A등급을 받았다고<br><strong>고등학교에서도 고득점이 보장되지 않습니다.</strong>
                     </div>
                     <div
-                        style="margin-top:20px;padding:14px 18px;background:rgba(255,107,107,0.08);border-radius:10px;">
-                        <strong style="font-size:18px;color:var(--danger);">점수만으로는 변별력이 없다</strong>
+                        style="margin-top:16px;padding:14px 18px;background:rgba(255,107,107,0.08);border-radius:10px;">
+                        <div style="font-size:15px;color:var(--off-white);line-height:1.8;">지필 비율 <strong style="color:var(--danger);">25~30%</strong> 기준</div>
+                        <div style="margin-top:8px;font-size:16px;">
+                            100점 × 25% = <strong style="color:var(--danger);">25점</strong><br>
+                            96점 × 25% = <strong style="color:var(--danger);">24점</strong>
+                        </div>
+                        <div style="margin-top:8px;font-size:15px;color:var(--gray);">→ 만점과 96점의 차이는 단 1점</div>
                     </div>
                 </div>
                 <div class="card" style="padding:32px 28px;border-color:rgba(74,144,217,0.3);">
@@ -3092,7 +3117,7 @@
             </div>
             <div class="key-message">
                 <div class="key-message-label">KEY MESSAGE</div>
-                <p>점수만으로는 변별력이 없습니다. <br><strong>수행평가의 질이 곧 세특의 질</strong>이며, 이것이 관리 시스템이 필요한 이유입니다.</p>
+                <p>지필 평가 점수만으로는 변별력이 없습니다. <br><strong>수행평가의 질이 곧 세특의 질</strong>이며, 이것이 관리 시스템이 필요한 이유입니다.</p>
             </div>
         </div>
 
@@ -3426,6 +3451,7 @@
         <span id="slideNumber"
             style="font-size:13px;color:var(--gray);font-weight:600;min-width:60px;text-align:center;">1</span>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">다음 →</button>
+        <button class="fullscreen-btn" id="fullscreenBtn" onclick="toggleFullscreen()" title="전체화면">⛶</button>
     </div>
 
     <script>
@@ -3462,6 +3488,18 @@
             document.getElementById('imgModal').classList.remove('show');
             modalOpen = false;
         }
+
+        // Fullscreen
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        document.addEventListener('fullscreenchange', () => {
+            document.getElementById('fullscreenBtn').textContent = document.fullscreenElement ? '✕' : '⛶';
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
