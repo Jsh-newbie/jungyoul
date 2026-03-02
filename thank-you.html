@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정율사관학원 | 설명회 자료 다운로드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep: #0a0a0a;
+            --navy: #111111;
+            --blue: #4A90D9;
+            --orange: #4A90D9;
+            --orange-light: #6BB5FF;
+            --white: #FFFFFF;
+            --off-white: #e0e0e0;
+            --gray: #999999;
+            --card: #1a1a1a;
+            --card2: #222222;
+            --border: rgba(255, 255, 255, 0.06);
+            --accent-glow: rgba(74, 144, 217, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--deep);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-logo-img {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-light);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(165deg, #111111 0%, #0a0a0a 50%, #0d0d0d 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.08) 0%, transparent 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(74, 144, 217, 0.12);
+            color: var(--orange-light);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            margin-bottom: 24px;
+            animation: fadeDown 0.8s ease;
+        }
+
+        .hero-check {
+            width: 80px;
+            height: 80px;
+            background: rgba(34, 197, 94, 0.12);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 28px;
+            animation: fadeDown 0.6s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            animation: fadeDown 0.8s ease 0.1s both;
+        }
+
+        .hero h1 span {
+            color: var(--orange-light);
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.7;
+            max-width: 480px;
+            animation: fadeDown 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== DOWNLOAD SECTION ===== */
+        .download-section {
+            background: var(--navy);
+            padding: 60px 24px 80px;
+        }
+
+        .download-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 36px;
+        }
+
+        .download-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .download-card {
+            background: var(--card2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .download-card:hover {
+            border-color: rgba(74, 144, 217, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(74, 144, 217, 0.15);
+        }
+
+        .download-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(74, 144, 217, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .download-card h3 {
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .download-card p {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--orange);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: auto;
+        }
+
+        .download-btn:hover {
+            background: var(--orange-light);
+            transform: translateY(-2px);
+        }
+
+        .download-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ===== FLOATING CTA ===== */
+        .float-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            background: var(--orange);
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(74, 144, 217, 0.5);
+            white-space: nowrap;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            display: block;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                box-shadow: 0 8px 32px rgba(74, 144, 217, 0.5);
+            }
+            50% {
+                box-shadow: 0 8px 48px rgba(74, 144, 217, 0.85);
+                transform: translateX(-50%) scale(1.03);
+            }
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--card2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: var(--blue);
+            padding: 24px;
+            text-align: center;
+            border-radius: 24px 24px 0 0;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .modal-header p {
+            font-size: 13px;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .modal-body {
+            padding: 28px 24px;
+        }
+
+        .modal-body .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .modal-body .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--off-white);
+        }
+
+        .modal-body .form-group input[type="text"],
+        .modal-body .form-group input[type="tel"],
+        .modal-body .form-group textarea {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 15px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .modal-body .form-group input:focus,
+        .modal-body .form-group textarea:focus {
+            border-color: var(--orange);
+        }
+
+        .modal-body .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 16px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 4px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            accent-color: var(--orange);
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-group span {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--orange);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            padding: 18px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(74, 144, 217, 0.3);
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: var(--orange-light);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background: var(--blue);
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Modal Success */
+        .modal-success {
+            text-align: center;
+            padding: 40px 24px;
+            display: none;
+        }
+
+        .modal-success.active {
+            display: block;
+        }
+
+        .modal-success-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(34, 197, 94, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .modal-success h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .modal-success p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .modal-success-close {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-success-close:hover {
+            background: var(--orange-light);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a0a0a;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .footer-info {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 767px) {
+            .download-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .float-cta {
+                font-size: 14px;
+                padding: 14px 28px;
+            }
+
+            .modal {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- FLOATING CTA -->
+    <a class="float-cta" onclick="openModal()">입학 상담 신청하기</a>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <img src="logo.png" alt="정율사관학원" class="nav-logo-img">
+        <a class="nav-cta" onclick="openModal()">상담 신청하기</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-check">&#10003;</div>
+        <span class="hero-badge">2026 고1 학교 생활 가이드 설명회</span>
+        <h1>설명회에 참석해주셔서<br><span>감사합니다</span></h1>
+        <p class="hero-sub">아래에서 설명회 자료를 다운로드하실 수 있습니다.<br>자료가 학교 생활에 도움이 되길 바랍니다.</p>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="download-section">
+        <div class="download-title">설명회 자료 다운로드</div>
+        <div class="download-cards">
+            <div class="download-card reveal">
+                <div class="download-icon">&#128218;</div>
+                <h3>고1을 위한<br>학교 생활 가이드</h3>
+                <p>고교학점제, 내신 관리, 생기부 작성 등 고1이 꼭 알아야 할 핵심 정보를 담았습니다.</p>
+                <a href="고1을 위한 학교 생활 가이드.pdf" download class="download-btn">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    PDF 다운로드
+                </a>
+            </div>
+            <div class="download-card reveal">
+                <div class="download-icon">&#128196;</div>
+                <h3>특별 설명회<br>PPT 자료</h3>
+                <p>설명회에서 발표된 프레젠테이션 전체 내용을 확인하실 수 있습니다.</p>
+                <a href="특별 설명회 PPT.pdf" download class="download-btn">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    PDF 다운로드
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTATION MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h2>입학 상담 신청</h2>
+                <p>정율사관학원에서 맞춤 상담을 제공해드립니다.</p>
+            </div>
+            <div class="modal-body">
+                <!-- Success State -->
+                <div class="modal-success" id="modal-success">
+                    <div class="modal-success-icon">&#10004;&#65039;</div>
+                    <h3>상담 신청이 완료되었습니다!</h3>
+                    <p>입력해주신 연락처로 빠른 시일 내에<br>상담 안내 연락을 드리겠습니다.</p>
+                    <button class="modal-success-close" onclick="closeModal()">확인</button>
+                </div>
+                <!-- Form -->
+                <form id="consult-form" onsubmit="handleConsultSubmit(event)">
+                    <div class="form-group">
+                        <label>학생 이름 *</label>
+                        <input type="text" name="studentName" required placeholder="홍학생">
+                    </div>
+                    <div class="form-group">
+                        <label>연락처 (휴대폰) *</label>
+                        <input type="tel" name="phone" required placeholder="010-0000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>고등학교 *</label>
+                        <input type="text" name="school" required placeholder="예: 소명여고">
+                    </div>
+                    <div class="form-group">
+                        <label>상담 희망 내용</label>
+                        <textarea name="message" placeholder="궁금하신 내용이나 상담받고 싶은 주제를 적어주세요."></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consult-agree" name="agree">
+                        <span onclick="document.getElementById('consult-agree').click()">(필수) 개인정보 수집 및 이용에 동의합니다. 수집된 정보는 입학 상담 목적으로만 활용되며, 관련 법령에 따라 안전하게 보관 및 폐기됩니다.</span>
+                    </div>
+                    <button type="submit" class="form-submit" id="consult-btn">상담 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">정율사관학원</div>
+        <div class="footer-info">
+            고교학점제 전문 · 20년 전통<br>
+            &#128205; 경기도 부천시 길주로 91, 6층 정율사관학원<br>
+            &#128222; 상담문의: 032-321-9937
+        </div>
+    </footer>
+
+    <script>
+        // SCROLL REVEAL
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(r => observer.observe(r));
+
+        // MODAL
+        function openModal() {
+            document.getElementById('modal-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+            // Reset form after closing
+            setTimeout(() => {
+                document.getElementById('consult-form').style.display = '';
+                document.getElementById('modal-success').classList.remove('active');
+                document.getElementById('consult-form').reset();
+            }, 300);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modal-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // CONSULTATION FORM SUBMIT
+        function handleConsultSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('consult-form');
+            const agree = document.getElementById('consult-agree');
+            const btn = document.getElementById('consult-btn');
+
+            if (!agree.checked) {
+                alert('개인정보 수집 및 이용에 동의해주세요.');
+                return;
+            }
+
+            const formData = {
+                type: '입학상담신청',
+                studentName: form.studentName.value,
+                phone: form.phone.value,
+                school: form.school.value,
+                message: form.message.value,
+                agree: true
+            };
+
+            btn.disabled = true;
+            btn.textContent = '신청 접수 중...';
+
+            fetch('https://script.google.com/macros/s/AKfycby6Z3REPlFVMfemXeC_NT7sRGs0XqFQpgbhO5MlIoPMy7LWRaKwpkhymdBhMcoz4-1j/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        form.style.display = 'none';
+                        document.getElementById('modal-success').classList.add('active');
+                        form.reset();
+                    } else {
+                        throw new Error(data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('[저장 실패] 구글 서버 오류입니다: ' + error.message);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = '상담 신청하기';
+                });
+        }
+    </script>
+</body>
+
+</html>
